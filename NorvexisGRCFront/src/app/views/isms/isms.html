@@ -1,0 +1,285 @@
+<div class="isms-page">
+  <section class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">ISMS Dashboard</p>
+      <h1>Information Security Management System</h1>
+      <p class="subtitle">
+        Overview of key indicators for security, continuity, compliance and risk.
+      </p>
+    </div>
+  </section>
+
+  <div class="panel-header">
+    <div class="month-selector">
+      <button type="button" class="month-btn" (click)="previousMonth()">
+        &#10094;
+      </button>
+
+      <div class="month-display">
+        <span class="month-label">{{ currentMonthLabel }} {{ currentMonthLabelWithQ }}</span>
+        <button type="button" class="today-btn" (click)="goToCurrentMonth()">
+          Current month
+        </button>
+      </div>
+
+      <button type="button" class="month-btn" (click)="nextMonth()">
+        &#10095;
+      </button>
+    </div>
+    <div class="filter-container">
+
+      <button type="button" class="filter-toggle-btn" (click)="toggleMonthFilter()">
+        Date Filter
+        <span>
+          {{ showMonthFilter ? '▲' : '▼' }}
+        </span>
+      </button>
+
+      <div class="month-year-filter" *ngIf="showMonthFilter">
+
+        <div class="filter-field">
+          <label>Month</label>
+
+          <select [(ngModel)]="selectedMonth" (change)="onMonthYearChange()">
+            <option *ngFor="let month of months; let i = index" [value]="i">
+              {{ month }}
+            </option>
+          </select>
+        </div>
+
+        <div class="filter-field">
+          <label>Year</label>
+
+          <select [(ngModel)]="selectedYear" (change)="onMonthYearChange()">
+            <option *ngFor="let year of availableYears" [value]="year">
+              {{ year }}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <section class="summary-grid">
+    <article class="summary-card">
+      <span class="summary-label">Total KPIs</span>
+      <strong>{{ totalKpis }}</strong>
+    </article>
+
+    <article class="summary-card accent">
+      <span class="summary-label">Compliance Score</span>
+      <strong>{{ complianceScore }}%</strong>
+    </article>
+  </section>
+
+  <section class="panel">
+    <div class="panel-header">
+      <div>
+        <h2>ISMS KPI Register</h2>
+      </div>
+
+      <div class="panel-actions">
+        <button *ngIf="isAdmin" type="button" class="btn-admin" (click)="addKpi()">
+          Add KPI
+        </button>
+        <button *ngIf="isAdmin" type="button" class="btn-admin" (click)="deleteCurrentMonthKpis()">
+          Delete Month KPIs
+        </button>
+        <button *ngIf="isAdmin" type="button" class="btn-admin" (click)="reloadCurrentMonthKpis()">
+          Reload Month KPIs
+        </button>
+        <button type="button" class="btn-user" (click)="exportToPDF()">
+          Export to PDF
+        </button>
+      </div>
+    </div>
+
+    <label class="category-filter">
+      <select name="categoryFilter" [(ngModel)]="selectedCategory" (ngModelChange)="onCategoryFilterChange()">
+        <option value="all">All categories</option>
+        <option *ngFor="let category of categoryFilterOptions" [value]="category">
+          {{ category }}
+        </option>
+      </select>
+    </label>
+
+    <br>
+
+    <section *ngIf="isFormOpen && !isEditMode" id="kpi-create-form" class="kpi-form-card create-mode">
+      <div class="form-card-header">
+        <div>
+          <span class="form-badge">New KPI</span>
+          <h3>{{ formTitle }}</h3>
+          <p>{{ formSubtitle }}</p>
+        </div>
+      </div>
+
+      <form #createKpiForm="ngForm" class="kpi-form" (ngSubmit)="submitKpiForm()">
+        <div class="form-grid">
+          <label class="form-field">
+            <span>KPI name</span>
+            <input type="text" name="name" [(ngModel)]="formModel.name" required placeholder="Enter KPI name" />
+          </label>
+
+          <label class="form-field">
+            <span>Value</span>
+            <input type="number" name="value" [(ngModel)]="formModel.value" required placeholder="Enter value" />
+          </label>
+
+          <label class="form-field">
+            <span>Target Value</span>
+            <input type="number" name="targetValue" [(ngModel)]="formModel.targetValue" required
+              placeholder="Enter target value" />
+          </label>
+
+          <label class="form-field">
+            <span>Category</span>
+            <select name="kpiCategoryId" [(ngModel)]="formModel.kpiCategoryId" required>
+              <option *ngFor="let category of categories" [value]="getCategoryId(category)">
+                {{ getCategoryLabel(category) }}
+              </option>
+            </select>
+          </label>
+
+          <label class="form-field">
+            <span>Responsible</span>
+            <select name="kpiResponsibleId" [(ngModel)]="formModel.kpiResponsibleId" required>
+              <option *ngFor="let responsible of responsibles" [value]="getResponsibleId(responsible)">
+                {{ getResponsibleLabel(responsible) }}
+              </option>
+            </select>
+          </label>
+        </div>
+
+        <label class="form-field form-field-full">
+          <span>Comments</span>
+          <textarea name="comments" [(ngModel)]="formModel.comments" rows="4" placeholder="Add comments"></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-admin" [disabled]="isSaving || !createKpiForm.form.valid">
+            {{ submitButtonLabel }}
+          </button>
+          <button type="button" class="btn-admin" (click)="cancelForm()" [disabled]="isSaving">
+            Cancel
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <div class="table-wrapper">
+      <table class="kpi-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>KPI</th>
+            <th>Responsible</th>
+            <th>Value</th>
+            <th>Target Value</th>
+            <th>Comments</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let kpi of filteredKpis">
+            <tr [class.editing-row]="isEditingRow(kpi)">
+              <td>
+                <span class="category-pill">{{ kpi.category }}</span>
+              </td>
+              <td class="kpi-name">{{ kpi.name }}</td>
+              <td>{{ kpi.responsible }}</td>
+              <td class="kpi-value">{{ kpi.value }}</td>
+              <td class="kpi-value">{{ kpi.targetValue }}</td>
+              <td class="comments">{{ kpi.comments }}</td>
+              <td>
+                <div class="row-actions">
+                  <button type="button" class="btn-admin" (click)="editKpi(kpi)">
+                    Edit
+                  </button>
+
+                  <button type="button" class="btn-admin" (click)="deleteKpi(kpi)">
+                    Delete
+                  </button>
+                </div>
+              </td>
+            </tr>
+
+            <tr *ngIf="isEditingRow(kpi)" class="inline-form-row">
+              <td colspan="6">
+                <section [id]="getEditFormElementId(editingKpiId)" class="kpi-form-card edit-mode inline-card">
+                  <div class="form-card-header">
+                    <div>
+                      <span class="form-badge edit">Editing KPI</span>
+                      <h3>{{ formTitle }}</h3>
+                      <p>{{ formSubtitle }}</p>
+                    </div>
+                  </div>
+
+                  <form #editKpiForm="ngForm" class="kpi-form" (ngSubmit)="submitKpiForm()">
+                    <div class="form-grid">
+                      <label class="form-field">
+                        <span>KPI name</span>
+                        <input type="text" name="editName" [(ngModel)]="formModel.name" required
+                          placeholder="Enter KPI name" />
+                      </label>
+
+                      <label class="form-field">
+                        <span>Value</span>
+                        <input type="number" name="editValue" [(ngModel)]="formModel.value" required
+                          placeholder="Enter value" />
+                      </label>
+
+                      <label class="form-field">
+                        <span>Category</span>
+                        <select name="editKpiCategoryId" [(ngModel)]="formModel.kpiCategoryId" required>
+                          <option *ngFor="let category of categories" [value]="getCategoryId(category)">
+                            {{ getCategoryLabel(category) }}
+                          </option>
+                        </select>
+                      </label>
+
+                      <label class="form-field">
+                        <span>Responsible</span>
+                        <select name="editKpiResponsibleId" [(ngModel)]="formModel.kpiResponsibleId" required>
+                          <option *ngFor="let responsible of responsibles" [value]="getResponsibleId(responsible)">
+                            {{ getResponsibleLabel(responsible) }}
+                          </option>
+                        </select>
+                      </label>
+
+                      <label class="form-field">
+                        <span>Target Value</span>
+                        <input type="number" name="editTargetValue" [(ngModel)]="formModel.targetValue" required
+                          placeholder="Enter target value" />
+                      </label>
+                    </div>
+
+                    <label class="form-field form-field-full">
+                      <span>Comments</span>
+                      <textarea name="editComments" [(ngModel)]="formModel.comments" rows="4"
+                        placeholder="Add comments"></textarea>
+                    </label>
+
+                    <div class="form-actions">
+                      <button type="submit" class="btn-admin" [disabled]="isSaving || !editKpiForm.form.valid">
+                        {{ submitButtonLabel }}
+                      </button>
+                      <button type="button" class="btn-admin" (click)="cancelForm()" [disabled]="isSaving">
+                        Cancel
+                      </button>
+                    </div>
+                  </form>
+                </section>
+              </td>
+            </tr>
+          </ng-container>
+
+          <tr *ngIf="filteredKpis.length === 0">
+            <td colspan="6" class="comments">No KPIs for this month and category.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>

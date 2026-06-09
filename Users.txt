@@ -1,0 +1,10 @@
+user(Admin): GRC@gmail.com
+password: Grc1234@
+
+user(NormalUser): demo@gmail.com
+password: Demo1234@
+
+
+GRAFANA
+admin
+Admin1234@

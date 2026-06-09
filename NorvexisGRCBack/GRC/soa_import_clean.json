@@ -1,0 +1,932 @@
+[
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.1",
+    "Tittle": "Policies for information security",
+    "Objective": "To ensure continuing suitability, adequacy, effectiveness of management direction and support\nfor information security in accordance with business, legal, statutory, regulatory and contractual requirements",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Information security policy and topic-specific policies and procedures have been defined by the company, aproved , published and communicated to and acknowledged by relevant personnel and relevant interested parties via the document management platform.",
+    "Evidence": "ISPe-1 Information Security Policy"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.2",
+    "Tittle": "Information security roles and responsibilities",
+    "Objective": "To establish a defined, approved and understood structure for the implementation, operation and management of information security within the organization.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "All SOPs that are part of the company ISMS include a section to define the roles and responsibilities of the process. These SOPs are documented via the document management platform",
+    "Evidence": "ISPe-2 Information Security Scope\nSection 7.3, Appendix 4\nISPe-1 Information Security Policy – the document management platform\nSection 5, Section 7.2.2\nSOP-11 Employee Lifecycle (Joiners, Movers, Leavers Process)\nAppendix 1"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.3",
+    "Tittle": "Segregation of duties",
+    "Objective": "To reduce the risk of fraud, error and bypassing of information security controls.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Each of our SOPs that are part of the ISMS contains a section RESPONSIBILITIES in which are defined the roles and the specific responsibilities of those roles in the process, avoiding in this way the dupplicity of functions, ambigueti and/or to avoid being judge and party. These SOPs are documented via the document management platform.",
+    "Evidence": "ISPe-1 Information Security Policy – the document management platform\nSection 7.2.2\nSOP-11 Employee Lifecycle (Joiners, Movers, Leavers Process) – the document management platform Appendix 1"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.4",
+    "Tittle": "Management responsibilities",
+    "Objective": "To ensure management understand their role in information security and undertake actions aiming to ensure all personnel are aware of and fulfil their information security responsibilities",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company management supports the ISMS and requires all personnel to apply information security in accordance with the SOPs defined. the company management participates actively in a Management review to review the status of the actions related to the ISMS. As an example:\nMRR-5 Management Review 2025 documented in the document management platform",
+    "Evidence": "ISPe-1 Information Security Policy\nSection 7.2.1\nSOPeQM-16 Management Review of the company’s Information Security Management System\nISPe-2 Information Security Scope\nSection 5"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.5",
+    "Tittle": "Contact with authorities",
+    "Objective": "To ensure appropriate flow of information takes place with respect to information security between the organization and the relevant legal, regulatory and supervisory authoroties.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company has established and maintain contact with relevant authorities according to the SOPeISM-9.",
+    "Evidence": "SOPeISM-9 Handling of Data Breaches"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.6",
+    "Tittle": "Contact with special interest groups",
+    "Objective": "To ensure appropriate flow of information takes place with respect to information security.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company has established and maintained contact with the SOC provider as a key supplier not only for the security operations but also as a security contact knowledge.",
+    "Evidence": "SOPeISM-9 Handling of Data Breaches\nSOP-256 IT Incident Management\nSection 8.3.9"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.7",
+    "Tittle": "Threat intelligence",
+    "Objective": "To provide awareness of the organization's threat environment so that the appropriate mitigation actions can be taken",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Information relating to information security threats is collected and analysed to produce threat\nintelligence according to the defined guidancde.",
+    "Evidence": "ISGe-5 Threat Modeling Guidance"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.8",
+    "Tittle": "Information security in project management",
+    "Objective": "To ensure information security risks related to projects and deliverables are effectively addressed in\nproject management throughout the project life cycle.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Information security is integrated into project management. Security requirements are defined as a non-functional requirements and are considered in the development and tested before the release of the project into the production environment.",
+    "Evidence": "ISGe-2 Operations Security\nSection 7.9\nExample. the internal portal - Security requirements\nMANe-23 Project Management Manual"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.9",
+    "Tittle": "Inventory of information and other associated assets",
+    "Objective": "To identify the organization's information and other associated assets in order to preserve their information security and assign appropiate ownership.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Critical IT assets are managed in the CMDB (the ITSM platform tool).",
+    "Evidence": "CMDB the ITSM platform\nISGe-2 Operations Security\nSection 7.9"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.10",
+    "Tittle": "Acceptable use of information and other associated assets",
+    "Objective": "",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "IT Enduser Policy describes a seie of policies related to the use of the main IT assets in orther to ensure information is protected. Information Classification Policy describes the type of information in the company and the policies associeted about how to habdle, share and protect each of the information categories. The staff is trained via the document management platform and the training platform to make personnel aware of the importance of these policies.",
+    "Evidence": "SOPeISM-10 Data Privacy and Information Security Awareness Training\nSOPeISM-4 Information Classification Policy\nSOPeISM-8 IT Enduser Policy"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.11",
+    "Tittle": "Return of assets",
+    "Objective": "",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company ensures thought the User Access Management process, specifically the associated Wis the procedure about how assets need to be returned and the protocols that need to be signed.",
+    "Evidence": "SOP-290 User Access Management\nWI-382 Offboarding (Internal Employee)\nWI-383 Offboarding (External Employee)"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.12",
+    "Tittle": "Classification of information",
+    "Objective": "",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company information is classified according to the Information Classification Policy. Four categories are defined: Internal, Public, Confidential and Highly confidential. Depending on each of the categories a set of policies to ensure the procetion of the information need to be followed.",
+    "Evidence": "SOPeISM-4 Information Classification Policy"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.13",
+    "Tittle": "Labelling of information",
+    "Objective": "",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Section 8.3 of the Information Classification Policy describes the tools that the company is using 2 applications: 1. Azure Information Protection (AIP) is a comprehensive solution integrated into all devices across the company to facilitate the document classification and protection.2. Microsoft Office provides a built-in mechanism for document the classification using Sensitivity Labels.",
+    "Evidence": "SOPeISM-4 Information Classification Policy\nSection 8.3"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.14",
+    "Tittle": "Information transfer",
+    "Objective": "",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company information is classified according to the Information Classification Policy. Four categories are defined: Internal, Public, Confidential and Highly confidential. Depending on each of the categories a set of policies about if it is possible to share or not the information and with whom are defined. Also Cryptography policy in Appendix 1 shows a table about the mechanisms that we are using to encrpyt einformation during its transfer",
+    "Evidence": "SOPeISM-4 Information Classification Policy\nSection 8.1.3, 8.1.3.5, 8.3\nSOPeISM-12 Cryptography Policy\nAppendix 1"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.15",
+    "Tittle": "Access control",
+    "Objective": "",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "A robust access control is defined in the company based in the User Access Management SOP. This SOP describes how access are granted, changed and revoked. the ITSM platform is the tool in which any kind of access is requested and managed.",
+    "Evidence": "SOP-290 User Access Management\nSOP-308 Physical access control system within the company's properties\nISGe-3 Secure Access Management"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.16",
+    "Tittle": "Identity management",
+    "Objective": "",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company ensures the identity management through different security policies defined in the User Access Management and Password Policy SOP. Through this policies it is ensured that a specific identity is only linked to a sigle person and exceptions are always managed thorugh and appropiated approval. Through Active Directory the password policies from standard user accounts, privileged user accounts and PIN codes are enforced.",
+    "Evidence": "SOP-290 User Access Management\nSOPeISM-2 Password Policy"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.17",
+    "Tittle": "Authentication information",
+    "Objective": "To ensure proper entity authentication and prevent failures of authentication processes",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company controls the authentication information through the Password Policy, in which it is specified the characteristics of the passwords for standard users, privileged users and PIN-codes. These policies are enforced via Active Directory. Staff is adviced about the importance of the confidentiality through the IT End User Policy. All staff is required to read and confirm the training of this policy via the document management platform.",
+    "Evidence": "SOPeISM-2 Password Policy\nSOPeISM-8 IT Enduser Policy\nSection 8.8 (Keepass)"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.18",
+    "Tittle": "Access rights",
+    "Objective": "To ensure access to information and other associated assets is defined and authorized according to the business requirements",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company provision, review, modify\nand remove access according to the User Access Management and Secure Access Management SOPs. Request for access are asked via the ITSM platform. All requests are approved by the Line Manager and for critical services a second level of approval (for example: Security Manager) need to be completed before provide, revoke or change an access.",
+    "Evidence": "SOP-290 User Access Management\nISGe-3 Secure Access Management"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.19",
+    "Tittle": "Information security in supplier relationships",
+    "Objective": "To maintain an agreed level of information security in supplier relationships",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company has defined and implemented the Supplier Management SOP to manage the information security risks associated with the use of supplier’s products or services.This process considers the activities for planning, selecting and evaluation of the suppliers in order to guarantee the security requirements and service levels are achieved by the supplier.",
+    "Evidence": "SOP-61 Supplier Management"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.20",
+    "Tittle": "Addressing information security within supplier agreements",
+    "Objective": "To maintain an agreed level of information security in supplier relationships.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "",
+    "Evidence": "SOP-61 Supplier Management"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.21",
+    "Tittle": "Managing information security in the ICT supply chain",
+    "Objective": "To maintain an agreed level of information security in supplier relationships",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "",
+    "Evidence": "SOP-61 Supplier Management"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.22",
+    "Tittle": "Monitoring, review and change management of supplier services",
+    "Objective": "To maintain an agreed level of information security and service delivery in line with supplier\nagreements.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company ensures a regularly monitoring, reviewing, evaluation and management of the changes in supplier information security practices. The supplier performance for all critical suppliers shall be evaluated every 12 months after supplier approval as an input for Management Review throught the SF-145 Supplier Evaluation Matrix.",
+    "Evidence": "SOP-61 Supplier Management\nSection 8.3, 8.4\nSF-145 Template Supplier Evaluation Matrix"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.23",
+    "Tittle": "Information security for use of cloud services",
+    "Objective": "To specify and manage information security for the use of cloud services.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company ensures the acquisition, use, management and exit from cloud services in\naccordance with the Security controls for Cloud Environments SOP which is also aligned to the Supplier Management SOP.",
+    "Evidence": "ISPe-4 Security Controls for Cloud Environments"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.24",
+    "Tittle": "Information security incident management planning and preparation",
+    "Objective": "To ensure quick, effective, consistent and orderly response to information security incidents, including communication on information security events.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company ensure the management of the information security incidents through SOP-256 IT Incident Management. Security incidents which are identified by the users need to report the incident via de IT Service Desk. Security incidents detected by the company SOC provider (the SOC provider) thought the continuos monitoring, are reported and visible via the SOC provider portal to the IT Security Manager. All security incidents, once registered, need to be evauated, prioritized and assigned to a specific resolver group for their resolution. . For critical security incidents a review after the resolution of the incident to define learning lessons is conducted. If security incident is related to a data breach a relationship with Handling of Data Breaches SOPeISM-9 is maintained.",
+    "Evidence": "SOP-256 IT Incident Management\nSection 8.3.10"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.25",
+    "Tittle": "Assessment and decision on information security events",
+    "Objective": "To ensure effective categorization and prioritization of information security events.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "",
+    "Evidence": "SOP-256 IT Incident Management\nSection 8.3.10\nSCDT-15 Amazon Web Services (AWS)"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.26",
+    "Tittle": "Response to information security incidents",
+    "Objective": "To ensure efficient and effective response to information security incidents.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "",
+    "Evidence": "SOP-256 IT Incident Management\nSection 8.3.10"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.27",
+    "Tittle": "Learning from information security incidents",
+    "Objective": "To reduce the likelihood or consequences of future incidents.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "",
+    "Evidence": "SOP-256 IT Incident Management\nSection 8.3.10"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.28",
+    "Tittle": "Collection of evidence",
+    "Objective": "To ensure a consistent and effective management of evidence related to information security incidents\nfor the purposes of disciplinary and legal actions.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "",
+    "Evidence": "SOP-256 IT Incident Management\nSection 8.3.10"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.29",
+    "Tittle": "Information security during disruption",
+    "Objective": "To protect information and other associated assets during disruption.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company has defined a Business Continuity strategy and a IT Service Continuity strategy to maintain the continuity of the information security during\ndisruption caused by a disaster. BCP and IT Service Continuity SOP are aligned to ensure critical processes and the critical IT Services that supports it are available nevertheless a disaster is occured. Main steps about how the company need to proceed during and after the disaster are considered in both documents. Annual tests of the IT DRPs for the critical IT Services are testes in order to ensure are applicable and ready in case of disasters. As a result of the test , improvements can be applied to the IT DRPs.",
+    "Evidence": "BCP-1 the company Business Continuity Plan (BCP)\nSOP-252 IT Service Continuity"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.30",
+    "Tittle": "ICT readiness for business continuity",
+    "Objective": "To ensure the availability of the organization’s information and other associated assets during\ndisruption.",
+    "Applicable": "true",
+    "Implemented": "false",
+    "Justification": "",
+    "Evidence": "BCP-1 the company Business Continuity Plan (BCP)\nSOP-252 IT Service Continuity"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.31",
+    "Tittle": "Legal, statutory, regulatory and contractual requirements",
+    "Objective": "To ensure compliance with legal, statutory, regulatory and contractual requirements related to information security.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company maintains an active process to identify, monitor, and assess all legal, statutory, regulatory, and contractual requirements relevant to its information security and business operations. This process includes periodic reviews of applicable legislation (e.g., GDPR, national data protection laws, health data regulations) and contractual obligations, as well as subscription to legal updates through official channels and trusted cybersecurity partners such as the SOC provider. The VP ICSO, in coordination with Legal and Compliance teams, ensures that emerging requirements are assessed and integrated into the ISMS as necessary. All compliance-related documentation is retained in controlled repositories and subject to audit to demonstrate adherence to applicable obligations.",
+    "Evidence": "ISPe-1 Information Security Policy\nSection 7.2.5"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.32",
+    "Tittle": "Intellectual property rights",
+    "Objective": "To ensure compliance with legal, statutory, regulatory and contractual requirements related to intellectual property rights and use of proprietary products",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company safeguards intellectual property (IP) rights to ensure the lawful use and protection of proprietary assets, both internally developed and licensed. All employees, contractors, and third parties are required to comply with applicable intellectual property laws and contractual obligations related to patents, copyrights, trademarks, and software licenses.\nthe company maintains an inventory of licensed software and digital content, with periodic audits to verify proper usage and prevent unauthorized copying or distribution. Procurement processes ensure that only legally obtained software and materials are acquired and installed in the company systems.\nTraining and awareness programs include guidance on respecting third-party IP and protecting the company’s own intellectual property, including scientific data, research outputs, methodologies, and software developments. Any suspected IP infringement or misuse is treated as a potential security incident and escalated accordingly the incident management process.",
+    "Evidence": "MANe-25 Code of Conduct\nSection 12\nISPe-1 Information Security Policy\nISPe-1 Appendix 2 CyberSecurity Plan V2.0.docx"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.33",
+    "Tittle": "Protection of records",
+    "Objective": "To ensure compliance with legal, statutory, regulatory and contractual requirements, as well as community or societal expectations related to the protection and availability of records.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company protects the authenticity, reliability, integrity and usability of records as established in SOP-26 Control of Documents and Records. This SOP defines the guidelines about the the storage and disposal of records, also defines the retention schedule defining records and the period of time for which they should be\nretained.",
+    "Evidence": "SOP-26 Control of Documents and Records"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.34",
+    "Tittle": "Privacy and protection of PII",
+    "Objective": "To ensure compliance with legal, statutory, regulatory and contractual requirements related to the\ninformation security aspects of the protection of PII.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company has defined three SOPs in order to identify and meet the requirements regarding the preservation of privacy and\nprotection of PII according to applicable laws and regulations and contractual requirements.\nSOPeISM-4, SOPeISM-9 and SOPeISM-12 the company has been communicated to all relevant interested parties involved\nin the processing of personally identifiable information via the document management platform. These SOPs defines the appropriate roles, responsibilities and controls related to the collection, processing,\ntransmission and deletion of PII.",
+    "Evidence": "SOPeISM-4 Information Classification Policy\nSOPeISM-9 Handling of Data Breaches\nSOPeISM-12 Cryptography Policy"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.35",
+    "Tittle": "Independent review of information security",
+    "Objective": "To ensure the continuing suitability, adequacy and effectiveness of the organization’s approach to\nmanaging information security.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "The ISMS of the company is reviewed independently at a planned interval of one year. This independent reviews are described in SOPeQM-16 specifically in Section Appendix, where it is described the internals audits and external audits executed during the year.The reports of the internal and external audits are registered in the document management platform to track any finding or opportunity of improvement until its closure.",
+    "Evidence": "SOPeQM-16 Management Review of the company’s Information Security Management System\nAppendix – Internal audit, external audit, pentest"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.36",
+    "Tittle": "Compliance with policies, rules and standards for information security",
+    "Objective": "To ensure that information security is implemented and operated in accordance with the organization’s\ninformation security policy, topic-specific policies, rules and standards.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "In order to comply with the ISMS, the company has diffened different strategies to review and improve the SOPs that are part of the ISMS:\n1. All SOPs are reviewed periodically. Via the document management platform, it is necessary to run a periodic review of the process, any improvement or change is informed to the staff involved in the SOP. Staff is trained in the new versions of the SOPs. In this way SOPs are always updated and validated\n2. Most of the SOPs are automate by specific tools in order to facilitate the compliance of the processes and the automatic measurement and reporting of the KPIs of the processes\n3. An annually top management review is established to review any topic related to the ISMS. Top management is involved in the review. Any resulted action is recorded and mainteined in the document management platform\n4. A monthly review with the IT Heads is established to review operative topics about the ISMS",
+    "Evidence": "SOP-239 Regulatory Intelligence\nSOPeQM-16 Management Review of the company’s Information Security Management System\nSOP-23 Audits"
+  },
+  {
+    "Section": "5. Organizational Controls",
+    "Control": "5.37",
+    "Tittle": "Documented operating procedures",
+    "Objective": "To ensure the correct and secure operation of information processing facilities.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "All SOPs that are part of the company ISMS are documented in the document management platform. the document management platform allows a periodic review of the documents and facilitates the approval cycle and training about new versions",
+    "Evidence": "WI-10 Management of Controlled Documents in the document management platform\nSOPs in the document management platform"
+  },
+  {
+    "Section": "6. People controls",
+    "Control": "6.1",
+    "Tittle": "Screening",
+    "Objective": "To ensure all personnel are eligible and suitable for the roles for which they are considered and remain\neligible and suitable during their employment.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company follows an specific policy to execute the screening of the candidates according to SOP-11. A background verification check on all candidates to become personnel is carried out prior to joining the organization.",
+    "Evidence": "SOP-11 Employee Lifecycle (Joiners, Movers, Leavers Process)\nSection 8.1.1"
+  },
+  {
+    "Section": "6. People controls",
+    "Control": "6.2",
+    "Tittle": "Terms and conditions of employment",
+    "Objective": "To ensure personnel understand their information security responsibilities for the roles for which they are considered.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company ensures trough the employment contract the personnel’s and the organization’s\nresponsibilities for information security. Also throug SOP-11 informations security responsabilities are established for all employees. This SOP need to be signed after it has been readed by each of the employees.",
+    "Evidence": "SOP-11 Employee Lifecycle (Joiners, Movers, Leavers Process)\nSection 8.1.2\nContract template: Sections 8, 9, 10, 14, 15\nEmployment contract"
+  },
+  {
+    "Section": "6. People controls",
+    "Control": "6.3",
+    "Tittle": "Information security awareness, education and training",
+    "Objective": "To ensure personnel and relevant interested parties are aware of and fulfil their information security\nresponsibilities.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "All the staff that has a defined role in the ISMS procedures and policies is notified and trained via the document management platform and the training platform.\n1. the document management platform: The system allows to confirm via the signature of the employee the completion of the training. For the main procedures and policies is it included a questionary. Stadistics about who completed the training course can be obtained\n2. the training platform: Used to train staffa about key topics of the ISMS like Data Privacy, GDRP; E-mail, IT Change Managementz. The tool allows upload a training course, complete it and apply at the final a questionary. Stadistics about who completed the training course can also be obtained.",
+    "Evidence": "SOPeISM-10 Data Privacy and Information Security Awareness Training\nWelcome email used to inform about the information security policies that need to be followed by the new employee"
+  },
+  {
+    "Section": "6. People controls",
+    "Control": "6.4",
+    "Tittle": "Disciplinary process",
+    "Objective": "To ensure personnel and other relevant interested parties understand the consequences of information\nsecurity policy violation, to deter and appropriately deal with personnel and other relevant interested\nparties who committed the violatio",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company has defined a Code of Conduct and Employee Handbook in which it is desfined, formalized and communicated the disciplinary process in case of violations to the ISMS.",
+    "Evidence": "MANe-25 Code of Conduct\nMANe-3 Employee Handbook\nSection 6,11 (Disciplinary actions are assigned depending on the type and severity of the infringement)"
+  },
+  {
+    "Section": "6. People controls",
+    "Control": "6.5",
+    "Tittle": "Responsibilities after termination or change of employment",
+    "Objective": "To protect the organization’s interests as part of the process of changing or terminating employment or\ncontracts.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Through SOP-11 and the contract template, the company ensures that the information security responsibilities that remain valid after termination or change of\nemployment are defined, enforced and communicated.",
+    "Evidence": "SOP-11 Employee Lifecycle (Joiners, Movers, Leavers Process)\nSection 8.5\nContract template: Employment contract"
+  },
+  {
+    "Section": "6. People controls",
+    "Control": "6.6",
+    "Tittle": "Confidentiality or non-disclosure agreements",
+    "Objective": "To maintain confidentiality of information accessible by personnel or external parties.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Through SOP-11 and the NDA template, the company ensures the needs for the protection of\ninformation are identified, documented, regularly reviewed and signed by personnel and other\nrelevant interested parties.",
+    "Evidence": "SOP-11 Employee Lifecycle (Joiners, Movers, Leavers Process)\nSection 8.1.2\nNDA template: NDA"
+  },
+  {
+    "Section": "6. People controls",
+    "Control": "6.7",
+    "Tittle": "Remote working",
+    "Objective": "To ensure the security of information when personnel are working remotely.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Through SOPeISM-8 and the home office agreement, the company ensures that security measures are implemented when personnel are working remotely to protect information accessed, processed or stored outside the organization’s premises.",
+    "Evidence": "SOPeISM-8 IT Enduser Policy\nSection 8.7\nHome office agreement. Home office agreement"
+  },
+  {
+    "Section": "6. People controls",
+    "Control": "6.8",
+    "Tittle": "Information security event reporting",
+    "Objective": "To support timely, consistent and effective reporting of information security events that can be\nidentified by personnel.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company has implemented and IT Service Desk as a first point of contact in which the users can report any incident included security incidents. If the security incident implies a data breach, the company has defined also SOPeISM-9 which indicates the correct channels and procedures to follow.",
+    "Evidence": "SOPeISM-8 IT Enduser Policy\nSection 7.10\nSOP-220 IT Service Desk Support\nSOP-256 IT Incident Management\nSOPeISM-9 Handling of Data Breaches"
+  },
+  {
+    "Section": "7 Physical controls",
+    "Control": "7.1",
+    "Tittle": "Physical security perimeters",
+    "Objective": "To prevent unauthorized physical access, damage and interference to the organization’s information\nand other associated assets.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company has defined the security perimeters to be used to protect areas that contain information and other\nassociated assets.SOP-308 defines the physical access control used by the company.",
+    "Evidence": "SOP-308 Physical access control system within the company's properties"
+  },
+  {
+    "Section": "7 Physical controls",
+    "Control": "7.2",
+    "Tittle": "Physical entry",
+    "Objective": "To ensure only authorized physical access to the organization’s information and other associated assets\noccurs.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "According to SOP-308 the secure areas of the company are protected by appropriate entry controls and access points. Physical security for offices, rooms and facilities are designed and implemented according to the SOP.",
+    "Evidence": "SOP-308 Physical access control system within the company's properties\nSections 8.3.1, 8.3.2, 8.4.5, 8.4.6, 8.5, 8.7"
+  },
+  {
+    "Section": "7 Physical controls",
+    "Control": "7.3",
+    "Tittle": "Securing offices, rooms and facilities",
+    "Objective": "To prevent unauthorized physical access, damage and interference to the organization’s information\nand other associated assets in offices, rooms and facilities.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "",
+    "Evidence": "SOP-308 Physical access control system within the company's properties"
+  },
+  {
+    "Section": "7 Physical controls",
+    "Control": "7.4",
+    "Tittle": "Physical security monitoring",
+    "Objective": "To detect and deter unauthorized physical access.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company premises are continuously monitored for unauthorized physical access according to SOP-12.",
+    "Evidence": "SOP-12 General Safety Manual\nSections 8.4.1, 8.4.2, 8.4.3, 8.4.4"
+  },
+  {
+    "Section": "7 Physical controls",
+    "Control": "7.5",
+    "Tittle": "Protecting against physical and environmental threats",
+    "Objective": "To prevent or reduce the consequences of events originating from physical and environmental threats.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company has implemented a protection strategy against physical and environmental threats, such as natural disasters and other intentional or unintentional physical threats. These strategy is defined as a result of an analysis BIA and risk assessment described in BCP-1.",
+    "Evidence": "BCP-1 the company Business Continuity Plan (BCP)\nSection 4.3\nSOP-12 General Safety Manual\nSection 8.4.8, 8.3.8, 8.3.9, 8.3.10, 8.3.11, 8.4.6\nSOP-214 Flood protection\nSOP-212 Emergency power supply\nSOPeAD-19 Notification of burglary"
+  },
+  {
+    "Section": "7 Physical controls",
+    "Control": "7.6",
+    "Tittle": "Working in secure areas",
+    "Objective": "To protect information and other associated assets in secure areas from damage and unauthorized\ninterference by personnel working in these areas.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Security measures for working in secure areas are designed and implemented by the company according to SOP-12 and SOP-308.",
+    "Evidence": "SOP-12 General Safety Manual\nSOP-308 Physical access control system within the company's properties"
+  },
+  {
+    "Section": "7 Physical controls",
+    "Control": "7.7",
+    "Tittle": "Clear desk and clear screen",
+    "Objective": "To reduce the risks of unauthorized access, loss of and damage to information on desks, screens and in\nother accessible locations during and outside normal working hours.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Clear desk and clear screen policies are defined and applicable in the company. Depending on the information type; different measurements need to be followed, for example:\nIt is required to lock away the information at the final of the day or at any time when left unattended on the company premises.\nIt is strictly forbidden to share information using a conference service functionality (For example: screen sharing)\nIn meetings the organizer shall take care that the information on the screens (TV, Beamer) cannot be seen by unauthorized people",
+    "Evidence": "SOPeISM-4 Information Classification Policy"
+  },
+  {
+    "Section": "7 Physical controls",
+    "Control": "7.8",
+    "Tittle": "Equipment siting and protection",
+    "Objective": "To reduce the risks from physical and environmental threats, and from unauthorized access and damage.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company equipment is sited securely and protected according to the policies defined in SOPEITPROD-17.",
+    "Evidence": "SOPEITPROD-17 Workplace setup and cable management\nSection 8.3"
+  },
+  {
+    "Section": "7 Physical controls",
+    "Control": "7.9",
+    "Tittle": "Security of assets off-premises",
+    "Objective": "To prevent loss, damage, theft or compromise of off-site devices and interruption to the organization’s\noperations.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company devices used outside the organization’s premises which stores or processes information are protected according to SOPeISM-8.",
+    "Evidence": "SOPeISM-8 IT Enduser Policy\nSection 7.7"
+  },
+  {
+    "Section": "7 Physical controls",
+    "Control": "7.10",
+    "Tittle": "Storage media",
+    "Objective": "To ensure only authorized disclosure, modification, removal or destruction of information on storage media",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Storage media should be managed through their life cycle of acquisition, use, transportation and\ndisposal in accordance with the organization’s classification scheme and handling requirements.",
+    "Evidence": "SOPeISM-8 IT Enduser Policy\nSection 7.4\nISGe-2 Operations Security\nSection 7.8"
+  },
+  {
+    "Section": "7 Physical controls",
+    "Control": "7.11",
+    "Tittle": "Supporting utilities",
+    "Objective": "To prevent loss, damage or compromise of information and other associated assets, or interruption to the organizations operations due to failure and disruption of supporting utilities.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company protects the information processing facilities from power failures and other disruptions caused\nby failures in supporting utilities as high-leve described in SOP-12 and detailed in SOP-212 and 214.",
+    "Evidence": "SOP-12 General Safety Manual\nSection 8.3, 8.4.6, 8.4.8, 8.5.3\nSOP-212 Emergency power supply\nSOP-214 Flood protection"
+  },
+  {
+    "Section": "7 Physical controls",
+    "Control": "7.12",
+    "Tittle": "Cabling security",
+    "Objective": "To prevent loss, damage, theft or compromise of information and other associated assets and\ninterruption to the organization’s operations related to power and communications cabling.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Cables carrying power, data or supporting information services are protected from interception,\ninterference or damage as described in SOPEITPROD-17 and SOP-12.",
+    "Evidence": "SOPEITPROD-17 Workplace setup and cable management\nSOP-12 General Safety Manual\nSection 8.5.3"
+  },
+  {
+    "Section": "7 Physical controls",
+    "Control": "7.13",
+    "Tittle": "Equipment maintenance",
+    "Objective": "To prevent loss, damage, theft or compromise of information and other associated assets and\ninterruption to the organization’s operations caused by lack of maintenance.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company equipment is maintained correctly to ensure availability, integrity and confidentiality of\ninformation.",
+    "Evidence": "ISGe-2 Operations Security\nSection 7.11"
+  },
+  {
+    "Section": "7 Physical controls",
+    "Control": "7.14",
+    "Tittle": "Secure disposal or re-use of equipment",
+    "Objective": "To prevent leakage of information from equipment to be disposed or re-used.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Items of equipment containing storage media are verified to ensure that any sensitive data and\nlicensed software has been removed or securely overwritten prior to disposal or re-use.",
+    "Evidence": "SOP-168 Local change of fixed assets"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.1",
+    "Tittle": "User endpoint devices",
+    "Objective": "To protect information against the risks introduced by using user endpoint devices.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Information stored on, processed by or accessible via user endpoint devices is protected according to SOPeISM-6 and SOPeISM-8.",
+    "Evidence": "SOPeISM-8 IT Enduser Policy\nSection 7.4\nSOPeISM-6 Management of Interface of IT Equipment\nISGe-2 Operations Security – the document management platform Microsoft Defender"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.2",
+    "Tittle": "Privileged access rights",
+    "Objective": "To ensure only authorized users, software components and services are provided with privileged\naccess rights.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "The allocation and use of privileged access rights should are restricted and managed according the SOP-290 in which is described the process to assign, change and revoke accesses. Any request of access is managed via the ITSM platform and approved by the Line Manager. For critical IT Services it is also required the approval of the Security Team. Access to information and other associated assets are restricted in accordance with the policies stated in SOP-290 and ISGe-3.",
+    "Evidence": "ISGe-3 Secure Access Management\nSection 7.2.3\nSOP-290 User Access Management"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.3",
+    "Tittle": "Information access restriction",
+    "Objective": "To ensure only authorized access and to prevent unauthorized access to information and other\nassociated assets.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "",
+    "Evidence": "ISGe-3 Secure Access Management\nSOP-290 User Access Management"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.4",
+    "Tittle": "Access to source code",
+    "Objective": "To prevent the introduction of unauthorized functionality, avoid unintentional or malicious changes\nand to maintain the confidentiality of valuable intellectual property.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Policies to regulate the accesses to the source code (read and write access to source code, development tools and software libraries) are defined in ISGe-3.",
+    "Evidence": "ISGe-3 Secure Access Management\nSection 7.4.5"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.5",
+    "Tittle": "Secure authentication",
+    "Objective": "To ensure a user or an entity is securely authenticated, when access to systems, applications and\nservices is granted.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Secure authentication technologies and procedures should are implemented based on information\naccess restrictions described in SOPeISM-2.",
+    "Evidence": "SOPeISM-2 Password Policy"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.6",
+    "Tittle": "Capacity management",
+    "Objective": "To ensure the required capacity of information processing facilities, human resources, offices and other\nfacilities.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "The use of resources are monitored and adjusted in line with current and expected capacity\nrequirements according to ISGe-2.",
+    "Evidence": "ISGe-2 Operations Security\nSection 7.1.2"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.7",
+    "Tittle": "Protection against malware",
+    "Objective": "To ensure information and other associated assets are protected against malware.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Protection against malware is implemented according ISGe-2. Appropriate user awareness is executed via the document management platform training.",
+    "Evidence": "ISGe-2 Operations Security\nSection 7.2"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.8",
+    "Tittle": "Management of technical vulnerabilities",
+    "Objective": "To prevent exploitation of technical vulnerabilities.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Information about technical vulnerabilities of information systems in use is obtained, the\norganization’s exposure to such vulnerabilities is evaluated and appropriate measures should\nbe taken according to the process described in SOPeISM-16.",
+    "Evidence": "SOPeISM-16 Vulnerability Management"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.9",
+    "Tittle": "Configuration management",
+    "Objective": "To ensure hardware, software, services and networks function correctly with required security\nsettings, and configuration is not altered by unauthorized or incorrect changes.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Configurations, including security configurations, of hardware, software, services and networks are established, documented, implemented, monitored and reviewed as required in ISGe-2.",
+    "Evidence": "ISGe-2 Operations Security"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.10",
+    "Tittle": "Information deletion",
+    "Objective": "To prevent unnecessary exposure of sensitive information and to comply with legal, statutory,\nregulatory and contractual requirements for information deletion.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Information stored in information systems, devices or in any other storage media is deleted\nwhen no longer required following the policies defined in SOP-26 and WI-11.",
+    "Evidence": "SOP-26 Control of Documents and Records\nWI-11 Archiving and Retention of Controlled Documents and Records\nSOPeISM-4 Information Classification Policy"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.11",
+    "Tittle": "Data masking",
+    "Objective": "To limit the exposure of sensitive data including PII, and to comply with legal, statutory, regulatory and\ncontractual requirements.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Where the protection of sensitive data (e.g. PII) is a concern, the company considers hiding\nsuch data by using techniques such as data masking, pseudonymization or anonymization. The policy whi9ch describes the scenarios where it is important hide the data are described in ISGe-2.",
+    "Evidence": "ISGe-2 Operations Security"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.12",
+    "Tittle": "Data leakage prevention",
+    "Objective": "To detect and prevent the unauthorized disclosure and extraction of information by individuals or\nsystems.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Data leakage prevention measuresare applied to systems, networks and any other devices that\nprocess, store or transmit sensitive information according to SOPeISM-8.",
+    "Evidence": "SOPeISM-8 IT Enduser Policy\nSOPeISM-9 Handling of Data Breaches"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.13",
+    "Tittle": "Information backup",
+    "Objective": "To enable recovery from loss of data or systems.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company backup copies of information, software and systems is maintained and regularly tested in\naccordance with the schedule defined in SOPEITPROD-2.",
+    "Evidence": "SOPEITPROD-2 Data Backup, Restore & Archiving"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.14",
+    "Tittle": "Redundancy of information processing facilities",
+    "Objective": "To ensure the continuous operation of information processing facilities.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company information processing facilities are implemented with redundancy sufficient to meet availability\nrequirements:Redundant network, redundant SAN & core switches, a RAID-6 system, redundant power supply",
+    "Evidence": "SOPEITPROD-2 Data Backup, Restore & Archiving"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.15",
+    "Tittle": "Logging",
+    "Objective": "To record events, generate evidence, ensure the integrity of log information, prevent against\nunauthorized access, identify information security events that can lead to an information security\nincident and to support investigations.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Logs that record activities, exceptions, faults and other relevant events are produced and stored according to the ISGe-2 and SOPEITPROD-2.",
+    "Evidence": "ISGe-2 Operations Security\nSection 7.4\nSOPEITPROD-2 Data Backup, Restore & Archiving\nSection 7.4.2"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.16",
+    "Tittle": "Monitoring activities",
+    "Objective": "To detect anomalous behaviour and potential information security incidents.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company networks, systems and applications are monitored for anomalous behaviour and appropriate\nactions taken to evaluate potential information security incidents according to the policies defined in ISGe-2.",
+    "Evidence": "ISGe-2 Operations Security\nSection 7.4"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.17",
+    "Tittle": "Clock synchronization",
+    "Objective": "To enable the correlation and analysis of security-related events and other recorded data, and to\nsupport investigations into information security incidents.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "The clocks of information processing systems used by the company are synchronized to\napproved time sources as described in ISGe-2.",
+    "Evidence": "ISGe-2 Operations Security\nActive directory integration - Architecture repository - the knowledge base(Section Requirements)"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.18",
+    "Tittle": "Use of privileged utility programs",
+    "Objective": "To ensure the use of utility programs does not harm system and application controls for information\nsecurity.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "The use of utility programs that can be capable of overriding system and application controls are\nrestricted and tightly controlled by the company.",
+    "Evidence": "ISGe-3 Secure Access Management\nSection 7.4.4"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.19",
+    "Tittle": "Installation of software on operational systems",
+    "Objective": "To ensure the integrity of operational systems and prevent exploitation of technical vulnerabilities.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Procedures and measures should be implemented to securely manage software installation on\noperational systems.",
+    "Evidence": "ISGe-2 Operations Security\nSection 7.5"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.20",
+    "Tittle": "Networks security",
+    "Objective": "To protect information in networks and its supporting information processing facilities from\ncompromise via the network.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Networks and network devices should be secured, managed and controlled to protect information in\nsystems and applications.",
+    "Evidence": "SOPeISM-3 Network Security\nSections 6, 8.1,8.3,8.3.1,8.3.2,8.4,8.4.2, Appendix"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.21",
+    "Tittle": "Security of network services",
+    "Objective": "To ensure security in the use of network services.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Security mechanisms, service levels and service requirements of network services are identified,\nimplemented and monitored in SOPeISM-3 Network Security.",
+    "Evidence": "SOPeISM-3 Network Security\nSection 8.3"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.22",
+    "Tittle": "Segregation of networks",
+    "Objective": "To split the network in security boundaries and to control traffic between them based on business needs.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Groups of information services, users and information systems are segregated in the company networks and managed according to SOPeISM-3.",
+    "Evidence": "SOPeISM-3 Network Security\n8.3.2 Segregation in networks"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.23",
+    "Tittle": "Web filtering",
+    "Objective": "To protect systems from being compromised by malware and to prevent access to unauthorized web\nresources.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "The access to external websites are managedaccording to SOPeISM-3 policies to reduce exposure to malicious content.",
+    "Evidence": "SOPeISM-3 Network Security\n8.3.3 Web content filtering"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.24",
+    "Tittle": "Use of cryptography",
+    "Objective": "To ensure proper and effective use of cryptography to protect the confidentiality, authenticity or",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Policies for the effective use of cryptography are defined\nand implemented according to SOPeISM-12.",
+    "Evidence": "SOPeISM-12 Cryptography Policy"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.25",
+    "Tittle": "Secure development life cycle",
+    "Objective": "To ensure information security is designed and implemented within the secure development life cycle\nof software and systems.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Rules for the secure development of software and systems are established and applied according to SOPeITDev-2, ISGe-4, ISGe-2.",
+    "Evidence": "SOPeITDev-2 Software Development\nISGe-4 Secure Development Policy\nISGe-2 Operations Security\nSection 7.1.3"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.26",
+    "Tittle": "Application security requirements",
+    "Objective": "To ensure all information security requirements are identified and addressed when developing or",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Information security requirements are identified, specified and approved when developing or\nacquiring applications according to SOPeITDev-2 and ISGe-4.",
+    "Evidence": "SOPeITDev-2 Software Development\nISGe-4 Secure Development Policy\nSection 7.9"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.27",
+    "Tittle": "Secure system architecture and engineering principles",
+    "Objective": "To ensure information systems are securely designed, implemented and operated within the development lifecycle.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Principles for engineering secure systems are established, documented, maintained and applied\nto any information system development activities according to ISGe-4.",
+    "Evidence": "ISGe-4 Secure Development Policy\nSection 7.4"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.28",
+    "Tittle": "Secure coding",
+    "Objective": "To ensure software is written securely thereby reducing the number of potential information security\nvulnerabilities in the software.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Secure coding principles are defined and applied in ISGe-4 and SOP-279.",
+    "Evidence": "ISGe-4 Secure Development Policy\nSection 7.5, 7.10 Appendix Secure coding\nSOP-279 Software Development and Deployment Guidelines"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.29",
+    "Tittle": "Security testing in development and acceptance",
+    "Objective": "To validate if information security requirements are met when applications or code are deployed to the\nproduction environment.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Security testing processes are defined and implemented in the development life cycle according to ISGe-4 and SOP-197.",
+    "Evidence": "ISGe-4 Secure Development Policy\nSection 7.7, 7.8\nSOP-197 Master Validation Plan - Computerized Systems\nSection 8.3.5"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.30",
+    "Tittle": "Outsourced development",
+    "Objective": "To ensure information security measures required by the organization are implemented in outsourced\nsystem development.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "the company directs, monitors and reviews the activities related to outsourced system\ndevelopment according to the policies described in ISGe-4.",
+    "Evidence": "ISGe-4 Secure Development Policy\nSection 7.6"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.31",
+    "Tittle": "Separation of development, test and production environments",
+    "Objective": "To protect the production environment and data from compromise by development and test activities.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Development, testing and production environments are separated and secured as described in ISGe-2.",
+    "Evidence": "ISGe-2 Operations Security\nSection 7.1.3"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.32",
+    "Tittle": "Change management",
+    "Objective": "To preserve information security when executing changes.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Changes to the it assets are managend and controlled thorugh the IT Change Management Process.Changes are classified as pre-authorized, normal and emergency changes. Depending on the type of change a different workflow with different approvals is needed to be completed. All changes are prioritized. Technical tests and UAT need to be performed according to the type of change. A post implementation review need to be performed to ensure the implementation of the change was succesful an no incidents or problems were generated in the production environment.",
+    "Evidence": "SOP-248 IT Change Management"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.33",
+    "Tittle": "Test information",
+    "Objective": "To ensure relevance of testing and protection of operational information used for testing.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Test information is appropriately selected, protected and managed.\nVALeIT-55 anonymization of the patients’ personal data in the internal application – the document management platform (Example)",
+    "Evidence": "ISGe-4 Secure Development Policy\nSection 7.8\nISGe-2 Operations Security\nSection 7.10"
+  },
+  {
+    "Section": "8 Technological controls",
+    "Control": "8.34",
+    "Tittle": "Protection of information systems during audit testing",
+    "Objective": "To minimize the impact of audit and other assurance activities on operational systems and business processes.",
+    "Applicable": "true",
+    "Implemented": "true",
+    "Justification": "Audit tests and other assurance activities involving assessment of operational systems is\nplanned and agreed with the tester according to ISGe-2.",
+    "Evidence": "ISGe-2 Operations Security\nSection 7.6"
+  }
+]

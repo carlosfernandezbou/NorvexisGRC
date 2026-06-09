@@ -1,0 +1,416 @@
+[
+    {
+        "id": "3990469a-c74a-4111-b1fc-9869bd24d4fe",
+        "DefaultValue": "6489570a-2829-4eab-924c-a2f6e6380579",
+        "FieldName": "KPICategoryId",
+        "KpiConfId": "a85ee8c5-0bae-4408-aaf2-898e8dee7db7"
+    },
+    {
+        "id": "ed0ac4a2-6a12-4a98-9af3-852ea168e933",
+        "DefaultValue": "92a05614-21ad-4ce3-b206-737cba4d1e8b",
+        "FieldName": "KPIResponsibleId",
+        "KpiConfId": "a85ee8c5-0bae-4408-aaf2-898e8dee7db7"
+    },
+    {
+        "id": "d608739e-0b45-4aae-847e-53bb9188c319",
+        "DefaultValue": "Number of security incidents reported",
+        "FieldName": "KPI_Name",
+        "KpiConfId": "a85ee8c5-0bae-4408-aaf2-898e8dee7db7"
+    },
+    {
+        "id": "fb6f84b0-70fb-44ca-a11e-ded08cbe38ac",
+        "DefaultValue": "6489570a-2829-4eab-924c-a2f6e6380579",
+        "FieldName": "KPICategoryId",
+        "KpiConfId": "7c86366b-c11b-41ee-80dd-175877c33bb3"
+    },
+    {
+        "id": "b8fcf984-30bc-4e4b-8b5d-44a404472ba4",
+        "DefaultValue": "92a05614-21ad-4ce3-b206-737cba4d1e8b",
+        "FieldName": "KPIResponsibleId",
+        "KpiConfId": "7c86366b-c11b-41ee-80dd-175877c33bb3"
+    },
+    {
+        "id": "3a7f01b5-18f1-4d6d-b702-5609ff2222f1",
+        "DefaultValue": "Percentage of incidents resolved within SLA",
+        "FieldName": "KPI_Name",
+        "KpiConfId": "7c86366b-c11b-41ee-80dd-175877c33bb3"
+    },
+    {
+        "id": "3b4a4bee-6088-4dbd-9cbf-4d1320a8f869",
+        "DefaultValue": "6489570a-2829-4eab-924c-a2f6e6380579",
+        "FieldName": "KPICategoryId",
+        "KpiConfId": "af628475-904a-408f-a965-50f3b0c2f2bf"
+    },
+    {
+        "id": "fd6be789-5023-406a-9789-1ab0c0363325",
+        "DefaultValue": "92a05614-21ad-4ce3-b206-737cba4d1e8b",
+        "FieldName": "KPIResponsibleId",
+        "KpiConfId": "af628475-904a-408f-a965-50f3b0c2f2bf"
+    },
+    {
+        "id": "beeb9778-5b77-4a85-a85a-3b7979fb3a49",
+        "DefaultValue": "Mean Time to Resolve (MTTR)",
+        "FieldName": "KPI_Name",
+        "KpiConfId": "af628475-904a-408f-a965-50f3b0c2f2bf"
+    },
+    {
+        "id": "7b73fb1a-2fcc-4acc-8cc9-6612b98d08ea",
+        "DefaultValue": "8256eab8-f883-405c-9fa1-b6eade99507b",
+        "FieldName": "KPICategoryId",
+        "KpiConfId": "541486aa-7c5f-4447-a79e-2028dd545ac5"
+    },
+    {
+        "id": "5bf4a605-8073-47a9-9789-7b4808dd52b3",
+        "DefaultValue": "92a05614-21ad-4ce3-b206-737cba4d1e8b",
+        "FieldName": "KPIResponsibleId",
+        "KpiConfId": "541486aa-7c5f-4447-a79e-2028dd545ac5"
+    },
+    {
+        "id": "486e9141-62b3-46ae-82b4-f2707f247b45",
+        "DefaultValue": "Percentage of deactivated accounts after offboarding",
+        "FieldName": "KPI_Name",
+        "KpiConfId": "541486aa-7c5f-4447-a79e-2028dd545ac5"
+    },
+    {
+        "id": "dcfc851a-7dc0-4e2f-bb04-b7e4faac9257",
+        "DefaultValue": "8256eab8-f883-405c-9fa1-b6eade99507b",
+        "FieldName": "KPICategoryId",
+        "KpiConfId": "80793a8b-df6f-496a-8eba-adc47ae6b9bd"
+    },
+    {
+        "id": "6bd8a966-53ac-4f3a-92eb-4aa15ff60698",
+        "DefaultValue": "92a05614-21ad-4ce3-b206-737cba4d1e8b",
+        "FieldName": "KPIResponsibleId",
+        "KpiConfId": "80793a8b-df6f-496a-8eba-adc47ae6b9bd"
+    },
+    {
+        "id": "6115f1ee-5e6b-4fad-8cd9-cb07392a5524",
+        "DefaultValue": "Unauthorized access attempts detected",
+        "FieldName": "KPI_Name",
+        "KpiConfId": "80793a8b-df6f-496a-8eba-adc47ae6b9bd"
+    },
+    {
+        "id": "e41127cb-b8bb-4e35-a2b5-65bc6a9281c4",
+        "DefaultValue": "a30af9ec-684d-4034-9da2-5dd10d59e440",
+        "FieldName": "KPICategoryId",
+        "KpiConfId": "21a9f5c7-338a-40ea-936d-0c73fecabdb7"
+    },
+    {
+        "id": "fafd8f3e-5e18-43c6-b5e7-b2f528e91ce8",
+        "DefaultValue": "e62c13b0-6998-499b-8fdf-2db6352edb88",
+        "FieldName": "KPIResponsibleId",
+        "KpiConfId": "21a9f5c7-338a-40ea-936d-0c73fecabdb7"
+    },
+    {
+        "id": "bb156726-0f5d-4ed3-a92c-e63454bc17b5",
+        "DefaultValue": "Changes with completed risk assessments",
+        "FieldName": "KPI_Name",
+        "KpiConfId": "21a9f5c7-338a-40ea-936d-0c73fecabdb7"
+    },
+    {
+        "id": "1e2bcdea-1be0-44aa-95e3-85ba9027d0c4",
+        "DefaultValue": "a30af9ec-684d-4034-9da2-5dd10d59e440",
+        "FieldName": "KPICategoryId",
+        "KpiConfId": "1955602c-fc08-410d-9822-b0a484b68d62"
+    },
+    {
+        "id": "1cc5edfc-7d2f-4d2d-a992-8b751bba4699",
+        "DefaultValue": "e62c13b0-6998-499b-8fdf-2db6352edb88",
+        "FieldName": "KPIResponsibleId",
+        "KpiConfId": "1955602c-fc08-410d-9822-b0a484b68d62"
+    },
+    {
+        "id": "9e246b98-6777-430c-9d1f-7f80caf54c80",
+        "DefaultValue": "Unauthorized/undocumented changes",
+        "FieldName": "KPI_Name",
+        "KpiConfId": "1955602c-fc08-410d-9822-b0a484b68d62"
+    },
+    {
+        "id": "64fbcd4a-87a7-4c76-ba3d-861aa56081da",
+        "DefaultValue": "1883fa02-8372-4458-8511-cea5c4e878f3",
+        "FieldName": "KPICategoryId",
+        "KpiConfId": "132002df-8145-4445-90a3-ceb122d92a4d"
+    },
+    {
+        "id": "f3d52dc0-7854-4ab4-862a-b797e805b0c7",
+        "DefaultValue": "e62c13b0-6998-499b-8fdf-2db6352edb88",
+        "FieldName": "KPIResponsibleId",
+        "KpiConfId": "132002df-8145-4445-90a3-ceb122d92a4d"
+    },
+    {
+        "id": "adc8ba52-c404-4bec-b649-31f07445ae0a",
+        "DefaultValue": "Critical assets with verified backups",
+        "FieldName": "KPI_Name",
+        "KpiConfId": "132002df-8145-4445-90a3-ceb122d92a4d"
+    },
+    {
+        "id": "224ec6d0-7ad6-4459-a596-f34266cc2d6d",
+        "DefaultValue": "43b854eb-a7b6-4b01-a043-a8ab6b1173bc",
+        "FieldName": "KPICategoryId",
+        "KpiConfId": "1302e16d-8b35-47d2-abcd-9ceb6da21a62"
+    },
+    {
+        "id": "1da11caf-1c44-4a9e-bb1d-00307309b090",
+        "DefaultValue": "92a05614-21ad-4ce3-b206-737cba4d1e8b",
+        "FieldName": "KPIResponsibleId",
+        "KpiConfId": "1302e16d-8b35-47d2-abcd-9ceb6da21a62"
+    },
+    {
+        "id": "32e7c67f-1af9-414f-b090-d264cadc6545",
+        "DefaultValue": "Open risks by criticality",
+        "FieldName": "KPI_Name",
+        "KpiConfId": "1302e16d-8b35-47d2-abcd-9ceb6da21a62"
+    },
+    {
+        "id": "4cd6d807-530b-4ad2-8fd9-ea93e2b61ffc",
+        "DefaultValue": "6489570a-2829-4eab-924c-a2f6e6380579",
+        "FieldName": "KPICategoryId",
+        "KpiConfId": "531d5a87-e5f2-4a88-96b8-8ff91a6dce0e"
+    },
+    {
+        "id": "fa4718a3-f6f9-4e74-9640-1c77ecf54936",
+        "DefaultValue": "e62c13b0-6998-499b-8fdf-2db6352edb88",
+        "FieldName": "KPIResponsibleId",
+        "KpiConfId": "531d5a87-e5f2-4a88-96b8-8ff91a6dce0e"
+    },
+    {
+        "id": "5c03f90e-f76f-4550-af32-0d8f19bf85cc",
+        "DefaultValue": "Number of non-conformities in audits",
+        "FieldName": "KPI_Name",
+        "KpiConfId": "531d5a87-e5f2-4a88-96b8-8ff91a6dce0e"
+    },
+    {
+        "id": "879f1ced-9b70-4b69-8c30-97486937491d",
+        "DefaultValue": "6489570a-2829-4eab-924c-a2f6e6380579",
+        "FieldName": "KPICategoryId",
+        "KpiConfId": "3f67d3ac-f2f1-4d20-a307-80ae055b5fb2"
+    },
+    {
+        "id": "575924c4-1ca6-4550-91aa-5332c2f7e3ea",
+        "DefaultValue": "e62c13b0-6998-499b-8fdf-2db6352edb88",
+        "FieldName": "KPIResponsibleId",
+        "KpiConfId": "3f67d3ac-f2f1-4d20-a307-80ae055b5fb2"
+    },
+    {
+        "id": "f3eb5ecf-e939-4e6a-9574-5e8e6e8608cf",
+        "DefaultValue": "Percentage of corrective actions closed on time",
+        "FieldName": "KPI_Name",
+        "KpiConfId": "3f67d3ac-f2f1-4d20-a307-80ae055b5fb2"
+    },
+    {
+        "id": "197b28e2-d7ef-4e31-bf3e-5a27ceb79d91",
+        "DefaultValue": "8256eab8-f883-405c-9fa1-b6eade99507b",
+        "FieldName": "KPICategoryId",
+        "KpiConfId": "a73e6183-a114-4bb4-a929-2900de913017"
+    },
+    {
+        "id": "b8f5f606-c15d-4152-8bf5-ab52ce74dd1d",
+        "DefaultValue": "e62c13b0-6998-499b-8fdf-2db6352edb88",
+        "FieldName": "KPIResponsibleId",
+        "KpiConfId": "a73e6183-a114-4bb4-a929-2900de913017"
+    },
+    {
+        "id": "0f6eb401-8cc6-4319-b817-46ebaf62a161",
+        "DefaultValue": "User access reviews completed on time",
+        "FieldName": "KPI_Name",
+        "KpiConfId": "a73e6183-a114-4bb4-a929-2900de913017"
+    },
+    {
+        "id": "50627ba4-d1fa-495f-9a7d-d404d3e03370",
+        "DefaultValue": "e92c979d-d659-4ce3-af6d-4ce4e18bac15",
+        "FieldName": "KPICategoryId",
+        "KpiConfId": "b0eeb835-4d15-41de-8bcb-a54aa8b7dfbf"
+    },
+    {
+        "id": "85735f35-13f5-4eaa-9c79-63c33fa09110",
+        "DefaultValue": "92a05614-21ad-4ce3-b206-737cba4d1e8b",
+        "FieldName": "KPIResponsibleId",
+        "KpiConfId": "b0eeb835-4d15-41de-8bcb-a54aa8b7dfbf"
+    },
+    {
+        "id": "2314e8e7-5ff2-4890-8009-8d2e6beca0ee",
+        "DefaultValue": "Average phishing test score",
+        "FieldName": "KPI_Name",
+        "KpiConfId": "b0eeb835-4d15-41de-8bcb-a54aa8b7dfbf"
+    },
+    {
+        "id": "a05609cc-a50d-4cbf-852d-1fe6750f9928",
+        "DefaultValue": "e92c979d-d659-4ce3-af6d-4ce4e18bac15",
+        "FieldName": "KPICategoryId",
+        "KpiConfId": "8af39693-ccf2-45d6-a8b9-c23247464d28"
+    },
+    {
+        "id": "840d77a1-2c31-467d-9ba7-3c18eab501f1",
+        "DefaultValue": "92a05614-21ad-4ce3-b206-737cba4d1e8b",
+        "FieldName": "KPIResponsibleId",
+        "KpiConfId": "8af39693-ccf2-45d6-a8b9-c23247464d28"
+    },
+    {
+        "id": "310a1207-775c-4a9b-967d-1af9abd9166d",
+        "DefaultValue": "Security awareness campaigns executed",
+        "FieldName": "KPI_Name",
+        "KpiConfId": "8af39693-ccf2-45d6-a8b9-c23247464d28"
+    },
+    {
+        "id": "1190fd25-f9c6-467a-b87e-45e0b5a29afa",
+        "DefaultValue": "e5fb9820-0cdc-4700-9af6-e548b0b83860",
+        "FieldName": "KPICategoryId",
+        "KpiConfId": "4bd1d7d9-3e52-40fd-9e55-93c2897c0427"
+    },
+    {
+        "id": "ab00d4a9-07e7-4cd1-9163-9d9ff4c67bb7",
+        "DefaultValue": "92a05614-21ad-4ce3-b206-737cba4d1e8b",
+        "FieldName": "KPIResponsibleId",
+        "KpiConfId": "4bd1d7d9-3e52-40fd-9e55-93c2897c0427"
+    },
+    {
+        "id": "4afc54af-3640-48f5-937f-1dbfea029151",
+        "DefaultValue": "SOA control deviations",
+        "FieldName": "KPI_Name",
+        "KpiConfId": "4bd1d7d9-3e52-40fd-9e55-93c2897c0427"
+    },
+    {
+        "id": "06eee7d0-a927-4976-a5a5-1d9180de9cc8",
+        "DefaultValue": "1883fa02-8372-4458-8511-cea5c4e878f3",
+        "FieldName": "KPICategoryId",
+        "KpiConfId": "c16f3ee8-277f-40cc-b84b-4495bbd650da"
+    },
+    {
+        "id": "51117093-5394-409c-a34c-40a3064d336d",
+        "DefaultValue": "e62c13b0-6998-499b-8fdf-2db6352edb88",
+        "FieldName": "KPIResponsibleId",
+        "KpiConfId": "c16f3ee8-277f-40cc-b84b-4495bbd650da"
+    },
+    {
+        "id": "9bf587db-68d0-4881-aec6-7e6ba50869ce",
+        "DefaultValue": "Disaster recovery tests completed vs planned",
+        "FieldName": "KPI_Name",
+        "KpiConfId": "c16f3ee8-277f-40cc-b84b-4495bbd650da"
+    },
+    {
+        "id": "19720207-7f93-468a-ac1f-743a0dc6fb2d",
+        "DefaultValue": "1883fa02-8372-4458-8511-cea5c4e878f3",
+        "FieldName": "KPICategoryId",
+        "KpiConfId": "bd43ebac-257d-490d-8354-6856d18f788b"
+    },
+    {
+        "id": "60db9792-c469-4f6d-acfa-032525f7a130",
+        "DefaultValue": "e62c13b0-6998-499b-8fdf-2db6352edb88",
+        "FieldName": "KPIResponsibleId",
+        "KpiConfId": "bd43ebac-257d-490d-8354-6856d18f788b"
+    },
+    {
+        "id": "7e7c9112-3341-4f67-91a6-68efa5de5fd0",
+        "DefaultValue": "Assets in CMDB with classification and owner",
+        "FieldName": "KPI_Name",
+        "KpiConfId": "bd43ebac-257d-490d-8354-6856d18f788b"
+    },
+    {
+        "id": "115cdc45-99d2-4556-9118-3f17c300038a",
+        "DefaultValue": "43b854eb-a7b6-4b01-a043-a8ab6b1173bc",
+        "FieldName": "KPICategoryId",
+        "KpiConfId": "b39fd61c-08d7-4870-b67a-e830fd54716e"
+    },
+    {
+        "id": "09bc436b-4efe-4154-b1da-2518f7ec6e1f",
+        "DefaultValue": "92a05614-21ad-4ce3-b206-737cba4d1e8b",
+        "FieldName": "KPIResponsibleId",
+        "KpiConfId": "b39fd61c-08d7-4870-b67a-e830fd54716e"
+    },
+    {
+        "id": "514e8a01-7eb9-4bd9-9f57-3d7dbf92af54",
+        "DefaultValue": "Mitigated risks vs treatment plan",
+        "FieldName": "KPI_Name",
+        "KpiConfId": "b39fd61c-08d7-4870-b67a-e830fd54716e"
+    },
+    {
+        "id": "8374b20d-80d7-43e6-822b-7e567a72b7d2",
+        "DefaultValue": "43b854eb-a7b6-4b01-a043-a8ab6b1173bc",
+        "FieldName": "KPICategoryId",
+        "KpiConfId": "deaf3d47-61b0-42b9-9131-c52fbe8c8347"
+    },
+    {
+        "id": "fe89c9bc-5152-457a-bbde-2121a6ab11e1",
+        "DefaultValue": "92a05614-21ad-4ce3-b206-737cba4d1e8b",
+        "FieldName": "KPIResponsibleId",
+        "KpiConfId": "deaf3d47-61b0-42b9-9131-c52fbe8c8347"
+    },
+    {
+        "id": "0b66a582-c74c-4118-9a60-3e062456432b",
+        "DefaultValue": "Scheduled risk reviews completed",
+        "FieldName": "KPI_Name",
+        "KpiConfId": "deaf3d47-61b0-42b9-9131-c52fbe8c8347"
+    },
+    {
+        "id": "41bc0146-8f18-402c-aea0-82b55acd5169",
+        "DefaultValue": "0",
+        "FieldName": "targetValue",
+        "KpiConfId": "a85ee8c5-0bae-4408-aaf2-898e8dee7db7"
+    },
+    {
+        "id": "6b08811f-b04d-4e06-b2d1-e14da410f451",
+        "DefaultValue": "100",
+        "FieldName": "targetValue",
+        "KpiConfId": "7c86366b-c11b-41ee-80dd-175877c33bb3"
+    },
+    {
+        "id": "d17df3f8-0290-4091-b2cd-1d84a73912f8",
+        "DefaultValue": "2",
+        "FieldName": "targetValue",
+        "KpiConfId": "af628475-904a-408f-a965-50f3b0c2f2bf"
+    },
+    {
+        "id": "6379cdd6-3d88-4f42-9fda-e0799aa631ba",
+        "DefaultValue": "100",
+        "FieldName": "targetValue",
+        "KpiConfId": "541486aa-7c5f-4447-a79e-2028dd545ac5"
+    },
+    {
+        "id": "7feab5d4-e255-4320-a0f9-f59b841b3ae3",
+        "DefaultValue": "0",
+        "FieldName": "targetValue",
+        "KpiConfId": "80793a8b-df6f-496a-8eba-adc47ae6b9bd"
+    },
+    {
+        "id": "c74e7951-ccad-49fb-9747-6c0781b5ede7",
+        "DefaultValue": "100",
+        "FieldName": "targetValue",
+        "KpiConfId": "21a9f5c7-338a-40ea-936d-0c73fecabdb7"
+    },
+    {
+        "id": "834e82c3-96c0-4a1b-98fd-cb92d210f6a0",
+        "DefaultValue": "0",
+        "FieldName": "targetValue",
+        "KpiConfId": "1955602c-fc08-410d-9822-b0a484b68d62"
+    },
+    {
+        "id": "479219fe-b575-4c06-abcc-4ebed728ca06",
+        "DefaultValue": "1883fa02-8372-4458-8511-cea5c4e878f3",
+        "FieldName": "KPICategoryId",
+        "KpiConfId": "59b4ae25-fc6a-4f33-84a2-d1b06cf1ea65"
+    },
+    {
+        "id": "7d9e3507-0d26-487c-a7f8-8c18ea079844",
+        "DefaultValue": "e62c13b0-6998-499b-8fdf-2db6352edb88",
+        "FieldName": "KPIResponsibleId",
+        "KpiConfId": "59b4ae25-fc6a-4f33-84a2-d1b06cf1ea65"
+    },
+    {
+        "id": "54fc8347-d4a1-4642-ad35-fadbaa385c0d",
+        "DefaultValue": "Disaster recovery tests completed vs planned",
+        "FieldName": "KPI_Name",
+        "KpiConfId": "59b4ae25-fc6a-4f33-84a2-d1b06cf1ea65"
+    },
+    {
+        "id": "a5091452-e7be-47b7-9b9f-ad7e2ee9a19a",
+        "DefaultValue": "7",
+        "FieldName": "targetValue",
+        "KpiConfId": "59b4ae25-fc6a-4f33-84a2-d1b06cf1ea65"
+    },
+    {
+        "id": "465abf49-1d6b-4efc-bbe7-45c25f92fb4b",
+        "DefaultValue": "0",
+        "FieldName": "targetValue",
+        "KpiConfId": "4bd1d7d9-3e52-40fd-9e55-93c2897c0427"
+    }
+]

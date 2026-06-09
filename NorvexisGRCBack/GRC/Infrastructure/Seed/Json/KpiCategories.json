@@ -1,0 +1,30 @@
+[
+    {
+        "id": "6489570a-2829-4eab-924c-a2f6e6380579",
+        "KPI_Category": "Security Incidents"
+    },
+    {
+        "id": "8256eab8-f883-405c-9fa1-b6eade99507b",
+        "KPI_Category": "Access Management"
+    },
+    {
+        "id": "a30af9ec-684d-4034-9da2-5dd10d59e440",
+        "KPI_Category": "Change & Configuration Management"
+    },
+    {
+        "id": "e92c979d-d659-4ce3-af6d-4ce4e18bac15",
+        "KPI_Category": "Awareness & Training"
+    },
+    {
+        "id": "e5fb9820-0cdc-4700-9af6-e548b0b83860",
+        "KPI_Category": "Compliance & Audits"
+    },
+    {
+        "id": "1883fa02-8372-4458-8511-cea5c4e878f3",
+        "KPI_Category": "Asset & Continuity"
+    },
+    {
+        "id": "43b854eb-a7b6-4b01-a043-a8ab6b1173bc",
+        "KPI_Category": "Risk Management"
+    }
+]

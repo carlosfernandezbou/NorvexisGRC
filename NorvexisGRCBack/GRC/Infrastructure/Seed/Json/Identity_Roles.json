@@ -1,0 +1,16 @@
+[
+    {
+        "Id": "2d222cf1-0c4f-4847-8062-691b9b802637",
+        "$type": "IdentityRole",
+        "Name": "Admin",
+        "NormalizedName": "ADMIN",
+        "id": "2d222cf1-0c4f-4847-8062-691b9b802637"
+    },
+    {
+        "Id": "c65e5ff8-9b80-4099-88fc-54c7ce2528b2",
+        "$type": "IdentityRole",
+        "Name": "NormalUser",
+        "NormalizedName": "NORMALUSER",
+        "id": "c65e5ff8-9b80-4099-88fc-54c7ce2528b2"
+    }
+]

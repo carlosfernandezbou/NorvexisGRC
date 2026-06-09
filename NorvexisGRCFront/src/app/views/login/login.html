@@ -1,0 +1,58 @@
+<div class="login-page">
+  <section class="login-card">
+    <div class="login-brand">
+      <img src="logo.png" alt="Brand Mark" class="brand-mark" />
+      <div>
+        <p class="eyebrow">Security Dashboard</p>
+        <h1>Welcome back</h1>
+      </div>
+    </div>
+
+    <p class="subtitle">
+      Sign in to access the ISO controls dashboard and Statement of Applicability workspace.
+    </p>
+
+    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="submitLogin()" novalidate>
+      <div class="form-field">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          placeholder="name@gmail.com"
+          autocomplete="email"
+        />
+        <small class="field-error" *ngIf="emailInvalid">
+          Please enter a valid email address.
+        </small>
+      </div>
+
+      <div class="form-field">
+        <label for="password">Password</label>
+        <div class="password-wrapper">
+          <input
+            id="password"
+            [type]="showPassword ? 'text' : 'password'"
+            formControlName="password"
+            placeholder="Enter your password"
+            autocomplete="current-password"
+          />
+          <button type="button" class="ghost-button" (click)="togglePassword()">
+            {{ showPassword ? 'Hide' : 'Show' }}
+          </button>
+        </div>
+        <small class="field-error" *ngIf="passwordInvalid">
+          Password is required.
+        </small>
+      </div>
+
+      <button type="submit" class="login-button" [disabled]="loginForm.invalid || loading">
+        {{ loading ? 'Signing in...' : 'Sign in' }}
+      </button>
+
+      <div class="empty-state error" *ngIf="errorMessage">
+        {{ errorMessage }}
+      </div>
+    </form>
+  </section>
+</div>

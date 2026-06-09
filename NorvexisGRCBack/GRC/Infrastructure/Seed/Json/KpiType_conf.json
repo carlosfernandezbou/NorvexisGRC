@@ -1,0 +1,30 @@
+[
+    {
+        "id": "710f01ae-e003-4147-af6c-95f40108abf4",
+        "Type": "Monthly"
+    },
+    {
+        "id": "828a72c9-0eed-4d9f-a8fa-a9e63585ca4d",
+        "Type": "Weekly"
+    },
+    {
+        "id": "8ef7a802-f7e4-4472-baf8-07a6d5aeb8d6",
+        "Type": "Biweekly"
+    },
+    {
+        "id": "5d4b37f9-84fe-401b-9bb4-c50770be16bc",
+        "Type": "Bimonthly"
+    },
+    {
+        "id": "25de8553-6bfa-4774-b0de-5448f29e779f",
+        "Type": "Quarterly"
+    },
+    {
+        "id": "006ab178-08a1-4ac4-82ad-57c1069741d8",
+        "Type": "Annual"
+    },
+    {
+        "id": "2c10e7b0-ead9-4593-9735-3eb44773c6b8",
+        "Type": "Biannual"
+    }
+]

@@ -1,0 +1,212 @@
+<div class="soa-page">
+  <section class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">SOA Dashboard</p>
+      <h1>Statement of Applicability</h1>
+      <p class="subtitle">
+        Visual overview of ISO controls, applicability, implementation status, and supporting evidence.
+      </p>
+    </div>
+  </section>
+
+  <section class="panel" *ngIf="data.length > 0">
+    <div class="panel-top">
+      
+      <div class="filter-box">
+        <h1 style="font-size: 30px;">ISO - 27001</h1>
+        <br>
+        <label for="controlSearch">Search control</label>
+        <div class="search-row">
+          <input #controlInput id="controlSearch" type="text" placeholder="e.g. 5.7"
+            (keyup.enter)="searchControl(controlInput.value)" />
+
+          <button type="button" class="btn-user" (click)="searchControl(controlInput.value)">
+            Search
+          </button>
+          
+          <button *ngIf="isAdmin" type="button" class="btn-admin" (click)="openCreateForm()">
+            + Add SOA
+          </button>
+          <button type="button" class="btn-user" (click)="exportToPDF()">
+            Export to PDF
+          </button>
+        </div>
+      </div>
+
+      <div class="panel-header panel-header-extended">
+        <div>
+          <h2>SOA Controls</h2>
+          <p>Total records: {{ data.length }}</p>
+
+          <div class="summary-inline">
+            <div class="mini-stat warning">
+              <span class="mini-stat-label">No Applicable</span>
+              <strong>{{ notApplicableCount }}</strong>
+            </div>
+
+            <div class="mini-stat danger">
+              <span class="mini-stat-label">Not Implemented</span>
+              <strong>{{ notImplementedCount }}</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="issues-menu-wrapper">
+          <button type="button" class="btn-user" (click)="toggleIssuesMenu()">
+            ☰ Controls to fix
+          </button>
+
+          <div class="issues-menu" *ngIf="issuesMenuOpen">
+            <div class="issues-menu-header">
+              <h3>Controls to fix</h3>
+              <p>Applicable or Implemented set to false</p>
+            </div>
+
+            <div class="issues-menu-list" *ngIf="controlsToFix.length > 0; else noIssues">
+              <button type="button" class="issue-item" *ngFor="let item of controlsToFix"
+                (click)="goToControl(item.Control)">
+                <div class="issue-item-top">
+                  <span class="issue-control">Control {{ item.Control }}</span>
+
+                  <div class="issue-badges">
+                    <span class="status-badge status-false" *ngIf="item.Applicable !== 'true'">
+                      Not Applicable
+                    </span>
+                    <span class="status-badge status-false" *ngIf="item.Implemented !== 'true'">
+                      Pending
+                    </span>
+                  </div>
+                </div>
+
+                <span class="issue-title">{{ item.Tittle }}</span>
+              </button>
+            </div>
+
+            <ng-template #noIssues>
+              <div class="issues-empty">
+                Everything looks good.
+              </div>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="soa-form" *ngIf="formOpen && !isEditMode">
+      <h3>{{ isEditMode ? 'Edit SOA' : 'Add SOA' }}</h3>
+
+      <input placeholder="Control - ej: 5.1" [(ngModel)]="formModel.Control" />
+      <input placeholder="Section - ej: 5. Organizational Controls " [(ngModel)]="formModel.Section" />
+      <input placeholder="Title - ej: Implement organizational security policies" [(ngModel)]="formModel.Tittle" />
+
+      <select [(ngModel)]="formModel.Applicable">
+        <option value="true">Applicable</option>
+        <option value="false">Not Applicable</option>
+      </select>
+
+      <select [(ngModel)]="formModel.Implemented">
+        <option value="true">Implemented</option>
+        <option value="false">Pending</option>
+      </select>
+
+      <textarea placeholder="Objective" [(ngModel)]="formModel.Objective"></textarea>
+      <textarea placeholder="Justification" [(ngModel)]="formModel.Justification"></textarea>
+      <textarea placeholder="Evidence" [(ngModel)]="formModel.Evidence"></textarea>
+
+      <div class="form-actions">
+        <button type="button" class="search-button" (click)="saveSoa()">
+          {{ saving ? 'Saving...' : 'Save' }}
+        </button>
+
+        <button type="button" class="cancel-button" (click)="cancelForm()">
+          Cancel
+        </button>
+      </div>
+    </div>
+
+    <div class="cards-grid">
+      <article class="soa-card" *ngFor="let item of data" [attr.id]="'control-' + item.Control">
+        <div class="soa-card-header">
+          <div class="control-meta">
+            <span class="section-pill">{{ item.Section }}</span>
+            <span class="control-code">Control {{ item.Control }}</span>
+          </div>
+
+          <div class="status-group">
+            <span class="status-badge" [ngClass]="item.Applicable === 'true' ? 'status-true' : 'status-false'">
+              {{ item.Applicable === 'true' ? 'Applicable' : 'Not Applicable' }}
+            </span>
+
+            <span class="status-badge" [ngClass]="item.Implemented === 'true' ? 'status-true' : 'status-false'">
+              {{ item.Implemented === 'true' ? 'Implemented' : 'Pending' }}
+            </span>
+          </div>
+        </div>
+        <div class="admin-actions" *ngIf="isAdmin">
+          <button type="button" class="btn-admin" (click)="openEditForm(item)">
+            Edit
+          </button>
+
+          <button type="button" class="btn-admin" (click)="deleteSoa(item)">
+            Delete
+          </button>
+        </div>
+        <br>
+
+        <div class="soa-form" *ngIf="isEditingItem(item)">
+          <h3>{{ isEditMode ? 'Edit SOA' : 'Add SOA' }}</h3>
+
+          <input placeholder="Control - ej: 5.1" [(ngModel)]="formModel.Control" />
+          <input placeholder="Section - ej: 5. Organizational Controls " [(ngModel)]="formModel.Section" />
+          <input placeholder="Title - ej: Implement organizational security policies" [(ngModel)]="formModel.Tittle" />
+
+          <select [(ngModel)]="formModel.Applicable">
+            <option value="true">Applicable</option>
+            <option value="false">Not Applicable</option>
+          </select>
+
+          <select [(ngModel)]="formModel.Implemented">
+            <option value="true">Implemented</option>
+            <option value="false">Pending</option>
+          </select>
+
+          <textarea placeholder="Objective" [(ngModel)]="formModel.Objective"></textarea>
+          <textarea placeholder="Justification" [(ngModel)]="formModel.Justification"></textarea>
+          <textarea placeholder="Evidence" [(ngModel)]="formModel.Evidence"></textarea>
+
+          <div class="form-actions">
+            <button type="button" class="btn-admin" (click)="saveSoa()">
+              {{ saving ? 'Saving...' : 'Save' }}
+            </button>
+
+            <button type="button" class="btn-admin" (click)="cancelForm()">
+              Cancel
+            </button>
+          </div>
+        </div>
+
+        <h3 class="soa-control-title">
+          {{ item.Tittle }}
+        </h3>
+        <div class="content-block">
+          <h4>Objective</h4>
+          <p>{{ item.Objective || 'No objective provided.' }}</p>
+        </div>
+
+        <div class="content-block">
+          <h4>Justification</h4>
+          <p>{{ item.Justification || 'No justification provided.' }}</p>
+        </div>
+
+        <div class="content-block">
+          <h4>Evidence</h4>
+          <p>{{ item.Evidence || 'No evidence provided.' }}</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <div class="empty-state" *ngIf="data.length === 0">
+    No data loaded.
+  </div>
+</div>

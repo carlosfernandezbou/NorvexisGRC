@@ -1,0 +1,134 @@
+/* =========================================================
+   RISK MANAGEMENT PAGE
+   Specific styles only
+   ========================================================= */
+
+:host {
+  display: block;
+}
+
+.risk-page {
+  min-height: 100vh;
+  padding: 32px;
+  background:
+    radial-gradient(circle at top right, rgba(225, 15, 28, 0.06), transparent 22%),
+    linear-gradient(rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.96)),
+    url('/CNTG-BG-Dots.png') center/cover no-repeat;
+}
+
+.risk-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  flex-wrap: wrap;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fbfd 55%, #fff1f3 100%);
+  border: 1px solid rgba(225, 15, 28, 0.12);
+  border-radius: 24px;
+  padding: 30px 32px;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.05),
+    0 2px 8px rgba(225, 15, 28, 0.04);
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.risk-header::after {
+  content: '';
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(225, 15, 28, 0.08), transparent 65%);
+  pointer-events: none;
+}
+
+.risk-header h1 {
+  margin: 0;
+  color: var(--text);
+  font-size: 34px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 720px;
+}
+
+.content-panel {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(225, 15, 28, 0.08);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+}
+
+.panel-title {
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(15,61,117,.10);
+}
+
+.content-panel h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: 26px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.catalog-panel {
+  margin-top: 4px;
+}
+
+.empty-state {
+  padding: 24px;
+  border: 1px dashed #f1cfd5;
+  border-radius: 18px;
+  background: #f8fbfd;
+  color: #6a6167;
+  text-align: center;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .risk-page {
+    padding: 18px;
+  }
+
+  .risk-header {
+    padding: 22px 20px;
+    border-radius: 20px;
+  }
+
+  .risk-header h1 {
+    font-size: 26px;
+  }
+
+  .content-panel {
+    padding: 16px;
+    border-radius: 20px;
+  }
+
+  .content-panel h2 {
+    font-size: 22px;
+  }
+
+}
+
+/* Modern risk management refinements */
+.risk-page {
+  background:
+    radial-gradient(circle at top right, rgba(18,198,192,.14), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(15,61,117,.10), transparent 34%),
+    var(--bg);
+}
+.risk-header { background: linear-gradient(135deg, rgba(255,255,255,.96), rgba(244,251,253,.92)); }
+.content-panel { background: rgba(255,255,255,.88); backdrop-filter: blur(18px); }
+.panel-title { border-bottom-color: var(--border); }
+.empty-state { border-color: var(--border); background: #f8fbfd; }

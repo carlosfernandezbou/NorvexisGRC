@@ -1,0 +1,198 @@
+/* =========================================================
+   RISK OTHER CATALOGS - Modern NorvexisGRC redesign
+   Visual-only update. No functionality changed.
+   ========================================================= */
+
+:host {
+  display: block;
+  --primary: #0f3d75;
+  --primary-strong: #08264d;
+  --secondary: #12c6c0;
+  --accent: #22d3ee;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --line: rgba(15, 61, 117, 0.12);
+  --shadow: 0 18px 45px rgba(2, 6, 23, 0.08);
+}
+
+.catalog-panel {
+  margin-top: 4px;
+}
+
+.other-catalogs-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.side-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.asset-card {
+  min-width: 0;
+}
+
+.card-block {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 22px;
+  background:
+    radial-gradient(circle at top right, rgba(18, 198, 192, 0.08), transparent 34%),
+    linear-gradient(180deg, #ffffff 0%, #f8fbfd 100%);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.card-block::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 5px;
+  background: linear-gradient(180deg, var(--primary), var(--secondary));
+}
+
+.card-block h3 {
+  margin: 0 0 18px;
+  color: var(--text);
+  font-size: 22px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.card-block.small-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.card-block.small-card::before {
+  display: none;
+}
+
+.card-block.small-card h3 {
+  margin: 0;
+  padding: 17px 20px;
+  background: linear-gradient(135deg, var(--primary-strong), var(--primary), var(--secondary));
+  color: white;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 18px;
+  border: 1px solid rgba(15, 61, 117, 0.1);
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 760px;
+  overflow: hidden;
+  border-radius: 18px;
+  background: white;
+}
+
+.styled-table thead th {
+  background: linear-gradient(135deg, var(--primary-strong), var(--primary), var(--secondary));
+  color: white;
+  text-align: left;
+  padding: 15px 16px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.styled-table tbody tr:hover {
+  background: linear-gradient(90deg, rgba(34, 211, 238, 0.08), rgba(18, 198, 192, 0.04));
+}
+
+.styled-table td {
+  padding: 15px 16px;
+  vertical-align: top;
+  color: #243044;
+  font-size: 14px;
+  line-height: 1.5;
+  border-bottom: 1px solid rgba(15, 61, 117, 0.08);
+}
+
+.styled-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.simple-list {
+  list-style: none;
+  margin: 0;
+  padding: 18px;
+}
+
+.simple-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  padding: 13px 14px;
+  line-height: 1.45;
+  font-weight: 700;
+  color: #243044;
+  background: linear-gradient(135deg, rgba(15, 61, 117, 0.06), rgba(18, 198, 192, 0.08));
+  border: 1px solid rgba(15, 61, 117, 0.1);
+  border-radius: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.simple-list li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(2, 6, 23, 0.08);
+}
+
+.simple-list li::before {
+  content: '';
+  flex: 0 0 auto;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--secondary);
+  box-shadow: 0 0 0 5px rgba(18, 198, 192, 0.16);
+}
+
+.simple-list li:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 1024px) {
+  .other-catalogs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .side-column {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-block {
+    border-radius: 20px;
+    padding: 16px;
+  }
+
+  .card-block.small-card {
+    padding: 0;
+  }
+
+  .card-block h3 {
+    font-size: 20px;
+  }
+
+  .styled-table {
+    min-width: 680px;
+  }
+}

@@ -1,0 +1,40 @@
+[
+    {
+        "Id": "acd606a6-14fa-4b64-b6fa-e21ab45d24ea",
+        "$type": "User",
+        "AccessFailedCount": 0,
+        "Email": "GRC@gmail.com",
+        "EmailConfirmed": false,
+        "IsActive": true,
+        "LastName": "grc",
+        "LockoutEnabled": true,
+        "Name": "grc",
+        "NormalizedEmail": "GRC@GMAIL.COM",
+        "NormalizedUserName": "GRC@GMAIL.COM",
+        "PasswordHash": "AQAAAAIAAYagAAAAEMKQC8ohZ3vNLOWw68173Fr1rFPSVwzdEHep7theolMoj2jyQNXrqJLTYKOuDIkUiA==",
+        "PhoneNumberConfirmed": false,
+        "SecurityStamp": "RPSQOXGPB6ZMFLNS7SAG23W7WXNKIDYQ",
+        "TwoFactorEnabled": false,
+        "UserName": "GRC@gmail.com",
+        "id": "acd606a6-14fa-4b64-b6fa-e21ab45d24ea"
+    },
+    {
+        "Id": "c1628526-6891-4e29-90f3-decc5d667fdf",
+        "$type": "User",
+        "AccessFailedCount": 0,
+        "Email": "demo@gmail.com",
+        "EmailConfirmed": false,
+        "IsActive": true,
+        "LastName": "demo",
+        "LockoutEnabled": true,
+        "Name": "demo",
+        "NormalizedEmail": "DEMO@GMAIL.COM",
+        "NormalizedUserName": "DEMO@GMAIL.COM",
+        "PasswordHash": "AQAAAAIAAYagAAAAEM6JX5m9D0F1GQzW4q5eW7l0JQ9Q0n3W7k1T8V6sK7YwQ1Y0YJ7cYV8x0p8Q2Y8Xw==",
+        "PhoneNumberConfirmed": false,
+        "SecurityStamp": "K2LSLXY7BGUCWIVZJ34XUYOHZ2MZI5X2",
+        "TwoFactorEnabled": false,
+        "UserName": "demo@gmail.com",
+        "id": "c1628526-6891-4e29-90f3-decc5d667fdf"
+    }
+]

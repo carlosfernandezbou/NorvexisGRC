@@ -1,0 +1,29 @@
+# Build
+bin/
+obj/
+
+# Visual Studio
+.vs/
+
+# Rider
+.idea/
+
+# Node
+node_modules/
+.angular/
+dist/
+
+# Logs
+*.log
+
+# User files
+*.user
+*.suo
+
+# Test results
+TestResults/
+coverage/
+
+# Cache
+*.cache
+*.lscache

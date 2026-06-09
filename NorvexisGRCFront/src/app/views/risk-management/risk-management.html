@@ -1,0 +1,45 @@
+<div class="risk-page">
+    <section class="risk-header">
+        <div>
+            <p class="eyebrow">Risk Management</p>
+            <h1>Risk Management Dashboard</h1>
+            <p class="subtitle">
+                Manage instructions, registers, threats, categories, and other catalogs.
+            </p>
+        </div>
+    </section>
+
+    <section class="content-panel">
+        <div class="panel-title">
+            <h2>{{ selectedSection }}</h2>
+        </div>
+        <div *ngIf="loading" class="empty-state">
+            Loading data...
+        </div>
+
+        <!-- INSTRUCTIONS -->
+        <div *ngIf="!loading && selectedSection === 'Instructions'" class="catalog-panel">
+            <app-risk-instructions></app-risk-instructions>
+        </div>
+
+        <!-- RISK REGISTER -->
+        <div *ngIf="!loading && selectedSection === 'Risk register'" class="catalog-panel">
+            <app-risk-register></app-risk-register>
+        </div>
+
+        <!-- THREATS CATALOG -->
+        <div *ngIf="!loading && selectedSection === 'Threats catalog'" class="catalog-panel">
+            <app-risk-threats-catalog></app-risk-threats-catalog>
+        </div>
+
+        <!-- RISK CATEGORIES CATALOG -->
+        <div *ngIf="!loading && selectedSection === 'Risk categorization'" class="catalog-panel">
+            <app-risk-categories-catalog></app-risk-categories-catalog>
+        </div>
+
+        <!-- OTHER CATALOGS -->
+        <div *ngIf="!loading && selectedSection === 'Other catalogs'" class="catalog-panel">
+            <app-risk-other-catalogs></app-risk-other-catalogs>
+        </div>
+    </section>
+</div>

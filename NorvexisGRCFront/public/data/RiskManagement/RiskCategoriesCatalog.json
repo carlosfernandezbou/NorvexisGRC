@@ -1,0 +1,73 @@
+{
+  "impactLevels": [
+    {
+      "level": 1,
+      "name": "Negligible",
+      "description": "The effects of damage are low and can be neglected. Business activity and/or the reputation of the company is not slightly affected."
+    },
+    {
+      "level": 2,
+      "name": "Limited",
+      "description": "The effects of the damage are limited and manageable. Very limited impact on the company's business and/or the reputation of the company."
+    },
+    {
+      "level": 3,
+      "name": "Considerable",
+      "description": "The effects of damage can be considerable. Significant impact on the company's business and/or the reputation of the company."
+    },
+    {
+      "level": 4,
+      "name": "Threatening the existence of the organization",
+      "description": "The effects of the damage can reach a catastrophic level that threatens the existence of the company. Results in sanctions, lawsuits or a halt of business."
+    }
+  ],
+  "likelihoodLevels": [
+    {
+      "level": 1,
+      "name": "Rarely",
+      "description": "According to present knowledge, the event could occur every 5 years at most."
+    },
+    {
+      "level": 2,
+      "name": "Medium",
+      "description": "The event occurs once every 5 years to once a year."
+    },
+    {
+      "level": 3,
+      "name": "Frequently",
+      "description": "The event occurs once a year to once a month."
+    },
+    {
+      "level": 4,
+      "name": "Very frequently",
+      "description": "The event occurs several times a month."
+    }
+  ],
+  "riskLevels": [
+    "Low",
+    "Medium",
+    "High",
+    "Very high"
+  ],
+  "riskMatrix": [
+    { "impact": 1, "likelihood": 1, "risk": "Low" },
+    { "impact": 1, "likelihood": 2, "risk": "Low" },
+    { "impact": 1, "likelihood": 3, "risk": "Low" },
+    { "impact": 1, "likelihood": 4, "risk": "Low" },
+
+    { "impact": 2, "likelihood": 1, "risk": "Low" },
+    { "impact": 2, "likelihood": 2, "risk": "Low" },
+    { "impact": 2, "likelihood": 3, "risk": "Medium" },
+    { "impact": 2, "likelihood": 4, "risk": "High" },
+
+    { "impact": 3, "likelihood": 1, "risk": "Medium" },
+    { "impact": 3, "likelihood": 2, "risk": "Medium" },
+    { "impact": 3, "likelihood": 3, "risk": "High" },
+    { "impact": 3, "likelihood": 4, "risk": "Very high" },
+
+    { "impact": 4, "likelihood": 1, "risk": "Medium" },
+    { "impact": 4, "likelihood": 2, "risk": "High" },
+    { "impact": 4, "likelihood": 3, "risk": "Very high" },
+    { "impact": 4, "likelihood": 4, "risk": "Very high" }
+  ]
+}

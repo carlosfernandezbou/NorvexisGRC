@@ -1,0 +1,49 @@
+<div class="catalog-panel">
+  <div class="other-catalogs-grid">
+    <div class="card-block asset-card">
+      <h3>Asset Type Catalog</h3>
+      <div class="table-wrapper">
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Sub-category</th>
+              <th>Asset type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let category of otherCatalogs?.assetTypes">
+              <ng-container *ngFor="let sub of category.subCategories">
+                <tr *ngFor="let asset of sub.assetTypes">
+                  <td>{{ category.category }}</td>
+                  <td>{{ sub.name }}</td>
+                  <td>{{ asset }}</td>
+                </tr>
+              </ng-container>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="side-column">
+      <div class="card-block small-card">
+        <h3>Risk Treatment Options</h3>
+        <ul class="simple-list">
+          <li *ngFor="let item of otherCatalogs?.riskTreatmentOptions">
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+
+      <div class="card-block small-card">
+        <h3>Treatment Plan Status</h3>
+        <ul class="simple-list">
+          <li *ngFor="let item of otherCatalogs?.treatmentPlanStatus">
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

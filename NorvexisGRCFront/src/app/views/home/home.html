@@ -1,0 +1,71 @@
+<section class="home-page">
+  <div class="home-header-row">
+    <div>
+      <h1>ISMS Performance - Executive Summary</h1>
+      <p class="period-line">
+        {{ selectedMonthLabel }} MTD ({{ monthRangeLabel }}) |
+        {{ monthlyKpiCount }} KPIs tracked across {{ totalKpiDomains }} domains
+      </p>
+    </div>
+
+    <div class="year-selector">
+      <div class="month-navigation">
+        <button type="button" class="year-btn" (click)="previousMonth()">&#10094;</button>
+
+        <div class="year-display">
+          <strong>{{ selectedMonthLabel }}</strong>
+          <button type="button" class="current-btn" (click)="goToCurrentMonth()">
+            Current month
+          </button>
+        </div>
+
+        <button type="button" class="year-btn" (click)="nextMonth()">&#10095;</button>
+      </div>
+
+      <div class="filter-container">
+
+        <button type="button" class="filter-toggle-btn" (click)="toggleMonthFilter()">
+          Date Filter
+          <span>
+            {{ showMonthFilter ? '▲' : '▼' }}
+          </span>
+        </button>
+
+        <div class="month-year-filter" *ngIf="showMonthFilter">
+
+          <div class="filter-field">
+            <label>Month</label>
+
+            <select [(ngModel)]="selectedMonth" (change)="onMonthYearChange()">
+              <option *ngFor="let month of months; let i = index" [value]="i">
+                {{ month }}
+              </option>
+            </select>
+          </div>
+
+          <div class="filter-field">
+            <label>Year</label>
+
+            <select [(ngModel)]="selectedYear" (change)="onMonthYearChange()">
+              <option *ngFor="let year of availableYears" [value]="year">
+                {{ year }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="loading" class="loading-state">
+    Loading dashboard...
+  </div>
+
+  <section class="summary-grid" *ngIf="!loading">
+    <article class="summary-card" *ngFor="let card of cards" [ngClass]="card.status">
+      <strong>{{ card.value }}</strong>
+      <span>{{ card.title }}</span>
+      <small *ngIf="card.subtitle">{{ card.subtitle }}</small>
+    </article>
+  </section>
+</section>

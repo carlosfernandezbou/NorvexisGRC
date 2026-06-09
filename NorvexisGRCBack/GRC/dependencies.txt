@@ -1,0 +1,42 @@
+dotnet add package Swashbuckle.AspNetCore --version 6.9.0
+
+//EntityFramework
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 9.0.10
+dotnet add package Microsoft.EntityFrameworkCore.Cosmos --version 9.0.6
+dotnet add package Microsoft.EntityFrameworkCore.Design --version 9.0.10
+dotnet add package Microsoft.EntityFrameworkCore.Tools --version 9.0.10
+
+//Cosmos DB
+dotnet add package Microsoft.Azure.Cosmos --version 3.58.0
+
+//Identity y autenticación
+dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore --version 9.0.10
+dotnet add package AspNetCore.Identity.CosmosDb --version 9.0.0
+dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer --version 9.0.10
+
+//Login
+dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer
+
+//JSON
+dotnet add package Newtonsoft.Json --version 13.0.4
+
+//Tests
+dotnet add package Microsoft.AspNetCore.Mvc.Testing --version 9.0.0
+
+//CRONS
+dotnet add package Quartz
+dotnet add package Quartz.Extensions.Hosting
+
+//Audit Trail
+dotnet add package Audit.NET
+dotnet add package Audit.EntityFramework.Core
+dotnet add package Audit.NET.AzureCosmos
+
+//Metricas
+dotnet add package OpenTelemetry.Extensions.Hosting
+dotnet add package OpenTelemetry.Instrumentation.AspNetCore
+dotnet add package OpenTelemetry.Instrumentation.Runtime
+dotnet add package OpenTelemetry.Exporter.Prometheus.AspNetCore --prerelease
+
+//Para importar excels pasarlos a datos
+dotnet add package ClosedXML --version 0.105.0

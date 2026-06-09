@@ -1,0 +1,84 @@
+{
+  "instructions": [
+    {
+      "title": "Category",
+      "description": "To select the category from which the asset belongs from the pre-defined menu"
+    },
+    {
+      "title": "Sub category",
+      "description": "To select the sub-category from which the asset belongs from the pre-defined menu"
+    },
+    {
+      "title": "Asset type",
+      "description": "To select the asset type from which the asset belongs from the pre-defined menu"
+    },
+    {
+      "title": "Asset",
+      "description": "To register the asset name, if it is available the ID of the asset please include"
+    },
+    {
+      "title": "Vulnerability",
+      "description": "To identify and list the vulnerabilities of the asset (weakness of an asset or control that can be exploited by one or more threats)"
+    },
+    {
+      "title": "Threats",
+      "description": "To select threats from the pre-defined threat catalog (potential cause of an unwanted incident, which can result in harm to a system or organization). Please note: Directly relevant threats shall be selected"
+    },
+    {
+      "title": "Confidentiality (C)",
+      "description": "Automatically fulfilled depending on the threat selected"
+    },
+    {
+      "title": "Integrity (I)",
+      "description": "Automatically fulfilled depending on the threat selected"
+    },
+    {
+      "title": "Availability (A)",
+      "description": "Automatically fulfilled depending on the threat selected"
+    },
+    {
+      "title": "Risk impact description",
+      "description": "To describe the risk"
+    },
+    {
+      "title": "Impact",
+      "description": "To select the impact of the risk from the pre-defined menu and using Section Risk Categories of this file to understand the impact levels meaning"
+    },
+    {
+      "title": "Likelihood",
+      "description": "To select the likelihood of the risk from the pre-defined menu and using Section Risk Categories of this file to understand the likelihood levels meaning"
+    },
+    {
+      "title": "Risk category",
+      "description": "Automatically calculated depending on the impact and likelihood levels selected"
+    },
+    {
+      "title": "Existing controls",
+      "description": "To list the existing controls if applicable. If there are no controls in place, indicate \"No controls in place\""
+    },
+    {
+      "title": "Risk treatment option",
+      "description": "To select the risk treatment option from the pre-defined catalog"
+    },
+    {
+      "title": "Treatment plan",
+      "description": "To list the actions to mitigate the risk that are part of the treatment plan (use different rows for each action)"
+    },
+    {
+      "title": "Owner",
+      "description": "To register the owner of the actions"
+    },
+    {
+      "title": "Due date",
+      "description": "To register the due date of the actions"
+    },
+    {
+      "title": "Status",
+      "description": "To select the status of the actions from the pre-defined catalog"
+    },
+    {
+      "title": "Residual risk",
+      "description": "After the implementation of the treatment plan, to re-evaluate the risk and select a new residual risk category"
+    }
+  ]
+}

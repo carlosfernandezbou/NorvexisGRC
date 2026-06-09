@@ -1,0 +1,129 @@
+{
+  "assetTypes": [
+    {
+      "category": "Hardware",
+      "subCategories": [
+        {
+          "name": "End-user devices",
+          "assetTypes": [
+            "PC",
+            "Laptops",
+            "Mobile phones",
+            "Tablet",
+            "SIM Cards",
+            "Displays",
+            "Printer/Scanner",
+            "Webcam",
+            "Dockingstation"
+          ]
+        },
+        {
+          "name": "Peripherals",
+          "assetTypes": [
+            "Headset",
+            "Speaker"
+          ]
+        },
+        {
+          "name": "Servers",
+          "assetTypes": [
+            "Servers"
+          ]
+        },
+        {
+          "name": "Network",
+          "assetTypes": [
+            "Switch",
+            "Router",
+            "Temperature sensor",
+            "Access Point",
+            "Firewall"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Software",
+      "subCategories": [
+        {
+          "name": "Business applications",
+          "assetTypes": [
+            "Business applications"
+          ]
+        },
+        {
+          "name": "Software licenses",
+          "assetTypes": [
+            "License"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Agreements and contracts",
+      "subCategories": [
+        {
+          "name": "Contract",
+          "assetTypes": [
+            "Contract"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Business processes",
+      "subCategories": [
+        {
+          "name": "Business process",
+          "assetTypes": [
+            "Business process"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Personnel",
+      "subCategories": [
+        {
+          "name": "Personnel",
+          "assetTypes": [
+            "Personnel"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Supplier",
+      "subCategories": [
+        {
+          "name": "Supplier",
+          "assetTypes": [
+            "Supplier"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Other assets",
+      "subCategories": [
+        {
+          "name": "Other assets",
+          "assetTypes": [
+            "Other assets"
+          ]
+        }
+      ]
+    }
+  ],
+  "riskTreatmentOptions": [
+    "Transfer",
+    "Acceptance",
+    "Reduction",
+    "Avoidance"
+  ],
+  "treatmentPlanStatus": [
+    "Open",
+    "In-progress",
+    "Completed"
+  ]
+}

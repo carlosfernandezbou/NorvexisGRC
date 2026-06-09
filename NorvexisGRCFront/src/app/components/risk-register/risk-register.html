@@ -1,0 +1,624 @@
+<div class="catalog-panel">
+  <div *ngIf="addRiskSuccess" class="success-state">
+    {{ addRiskSuccess }}
+  </div>
+
+  <div class="panel">
+    <div class="panel-header">
+      <div>
+        <h2>Risk Assessment & Treatment Plan</h2>
+        <p>Click on the description to view full risk details.</p>
+      </div>
+
+      <div class="risk-actions">
+        <button type="button" class="btn-admin" (click)="promptDeleteRisk()" [disabled]="deletingRisk">
+          {{ deletingRisk ? 'Deleting...' : 'Delete risk' }}
+        </button>
+
+        <button type="button" class="btn-admin" (click)="openAddRisk()">
+          + Add risk
+        </button>
+        <button type="button" class="btn-user" (click)="exportToPDF()">
+          Export to PDF
+        </button>
+      </div>
+    </div>
+
+    <div *ngIf="deleteRiskSuccess" class="success-state">
+      {{ deleteRiskSuccess }}
+    </div>
+
+    <div *ngIf="deleteRiskError" class="error-state">
+      {{ deleteRiskError }}
+    </div>
+
+    <ng-template #riskFormTemplate>
+      <div class="risk-form-card" [class.risk-form-card-inline]="isEditMode">
+        <div class="risk-form-header">
+          <div>
+            <h3>{{ isEditMode ? 'Edit risk' : 'Add new risk' }}</h3>
+            <p *ngIf="isEditMode" class="form-focus-hint">Estás editando {{ newRisk.riskId }}. Usa los campos del
+              Assessment/Treatment seleccionado debajo.</p>
+            <p>
+              {{ isEditMode
+              ? 'Update identification, assessment and treatment for the selected risk.'
+              : 'Complete identification, assessment and treatment in a single form.' }}
+            </p>
+          </div>
+
+          <button type="button" class="btn-user" (click)="closeRiskForm()">
+            Close
+          </button>
+        </div>
+
+        <div *ngIf="addRiskError" class="error-state">
+          {{ addRiskError }}
+        </div>
+
+        <form class="risk-form-grid" (ngSubmit)="submitRiskForm()">
+          <div class="form-block">
+            <h4>Risk identification</h4>
+
+            <label>
+              <span>Risk ID</span>
+              <input type="text" name="riskId" [value]="newRisk.riskId" readonly aria-readonly="true" />
+            </label>
+
+            <label>
+              <span>Description</span>
+              <input type="text" name="description" [(ngModel)]="newRisk.description" />
+            </label>
+
+            <label>
+              <span>Category</span>
+              <input type="text" name="category" [(ngModel)]="newRisk.category" />
+            </label>
+
+            <label>
+              <span>Sub category</span>
+              <input type="text" name="subCategory" [(ngModel)]="newRisk.subCategory" />
+            </label>
+
+            <label>
+              <span>Asset type</span>
+              <input type="text" name="assetType" [(ngModel)]="newRisk.assetType" />
+            </label>
+
+            <label>
+              <span>Asset name</span>
+              <input type="text" name="assetName" [(ngModel)]="newRisk.assetName" />
+            </label>
+
+            <label>
+              <span>Vulnerability</span>
+              <textarea name="vulnerability" [(ngModel)]="newRisk.vulnerability"></textarea>
+            </label>
+
+            <label>
+              <span>Threats</span>
+              <input type="text" name="threats" [(ngModel)]="newRisk.threats" />
+            </label>
+
+            <div class="checkbox-group-field">
+              <span class="checkbox-group-label">Core value impacted</span>
+
+              <div class="checkbox-group">
+                <label class="checkbox-inline">
+                  <span>Confidentiality (C)</span>
+                  <input type="checkbox" [checked]="isCoreValueSelected('C')"
+                    (change)="onCoreValueChange('C', $any($event.target).checked)" />
+                </label>
+
+                <label class="checkbox-inline">
+                  <span>Integrity (I)</span>
+                  <input type="checkbox" [checked]="isCoreValueSelected('I')"
+                    (change)="onCoreValueChange('I', $any($event.target).checked)" />
+                </label>
+
+                <label class="checkbox-inline">
+                  <span>Availability (A)</span>
+                  <input type="checkbox" [checked]="isCoreValueSelected('A')"
+                    (change)="onCoreValueChange('A', $any($event.target).checked)" />
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-block">
+            <h4>Risk assessment</h4>
+
+            <ng-container *ngIf="!isEditMode; else editAssessmentsTemplate">
+              <label>
+                <span>Risk impact description</span>
+                <textarea name="riskImpactDescription" [(ngModel)]="newRisk.riskImpactDescription"></textarea>
+              </label>
+
+              <label>
+                <span>Existing controls</span>
+                <textarea name="existingControls" [(ngModel)]="newRisk.existingControls"></textarea>
+              </label>
+
+              <label>
+                <span>Impact</span>
+                <select name="impact" [(ngModel)]="newRisk.impact" (ngModelChange)="updateRiskCategory()">
+                  <option value="">Select impact</option>
+                  <option value="1-Negligible">1-Negligible</option>
+                  <option value="2-Limited">2-Limited</option>
+                  <option value="3-Considerable">3-Considerable</option>
+                  <option value="4-Threatening the existence of the organization">
+                    4-Threatening the existence of the organization
+                  </option>
+                </select>
+              </label>
+
+              <label>
+                <span>Likelihood</span>
+                <select name="likelihood" [(ngModel)]="newRisk.likelihood" (ngModelChange)="updateRiskCategory()">
+                  <option value="">Select likelihood</option>
+                  <option value="1-Rarely">1-Rarely</option>
+                  <option value="2-Medium">2-Medium</option>
+                  <option value="3-Frequently">3-Frequently</option>
+                  <option value="4-Very frequently">4-Very frequently</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Risk category</span>
+                <input type="text" name="riskCategory" [(ngModel)]="newRisk.riskCategory" readonly
+                  placeholder="Calculated automatically" />
+              </label>
+            </ng-container>
+
+            <ng-template #editAssessmentsTemplate>
+              <div class="edit-selector-card">
+                <label>
+                  <span>Assessment to edit</span>
+                  <input type="number" name="editAssessmentNumber" min="1" [max]="newRisk.assessments.length"
+                    [(ngModel)]="editAssessmentNumber" (ngModelChange)="clampSelectedAssessmentNumber()" />
+                </label>
+                <p>Available assessments: {{ newRisk.assessments.length }}. Only the selected assessment will be
+                  updated.</p>
+              </div>
+
+              <ng-container *ngIf="getSelectedAssessment() as assessment; else noAssessmentSelected">
+                <div class="nested-form-card">
+                  <h5>Assessment {{ editAssessmentNumber }}</h5>
+
+                  <label>
+                    <span>Risk impact description</span>
+                    <textarea name="selectedRiskImpactDescription"
+                      [(ngModel)]="assessment.riskImpactDescription"></textarea>
+                  </label>
+
+                  <label>
+                    <span>Existing controls</span>
+                    <textarea name="selectedExistingControls" [(ngModel)]="assessment.existingControls"></textarea>
+                  </label>
+
+                  <label>
+                    <span>Impact</span>
+                    <select name="selectedImpact" [(ngModel)]="assessment.impact"
+                      (ngModelChange)="updateAssessmentRiskCategory(editAssessmentNumber - 1)">
+                      <option value="">Select impact</option>
+                      <option value="1-Negligible">1-Negligible</option>
+                      <option value="2-Limited">2-Limited</option>
+                      <option value="3-Considerable">3-Considerable</option>
+                      <option value="4-Threatening the existence of the organization">
+                        4-Threatening the existence of the organization
+                      </option>
+                    </select>
+                  </label>
+
+                  <label>
+                    <span>Likelihood</span>
+                    <select name="selectedLikelihood" [(ngModel)]="assessment.likelihood"
+                      (ngModelChange)="updateAssessmentRiskCategory(editAssessmentNumber - 1)">
+                      <option value="">Select likelihood</option>
+                      <option value="1-Rarely">1-Rarely</option>
+                      <option value="2-Medium">2-Medium</option>
+                      <option value="3-Frequently">3-Frequently</option>
+                      <option value="4-Very frequently">4-Very frequently</option>
+                    </select>
+                  </label>
+
+                  <label>
+                    <span>Risk category</span>
+                    <input type="text" name="selectedRiskCategory" [(ngModel)]="assessment.riskCategory" readonly
+                      placeholder="Calculated automatically" />
+                  </label>
+                </div>
+              </ng-container>
+
+              <ng-template #noAssessmentSelected>
+                <div class="error-state inline-error-state">Select a valid assessment number.</div>
+              </ng-template>
+            </ng-template>
+          </div>
+
+          <div class="form-block">
+            <h4>Risk treatment</h4>
+
+            <ng-container *ngIf="!isEditMode; else editTreatmentsTemplate">
+              <label>
+                <span>Risk treatment option</span>
+                <input type="text" name="riskTreatmentOption" [(ngModel)]="newRisk.riskTreatmentOption" />
+              </label>
+
+              <label>
+                <span>Treatment plan</span>
+                <textarea name="treatmentPlan" [(ngModel)]="newRisk.treatmentPlan"></textarea>
+              </label>
+
+              <label>
+                <span>Owner</span>
+                <input type="text" name="owner" [(ngModel)]="newRisk.owner" />
+              </label>
+
+              <label>
+                <span>Due date</span>
+                <input type="text" name="dueDate" [(ngModel)]="newRisk.dueDate" placeholder="01-01-2001" />
+              </label>
+
+              <label>
+                <span>Status</span>
+                <select name="status" [(ngModel)]="newRisk.status">
+                  <option value="Open">Open</option>
+                  <option value="Closed">Closed</option>
+                  <option value="Not applicable">Not applicable</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Residual risk</span>
+                <input type="text" name="residualRisk" [(ngModel)]="newRisk.residualRisk" />
+              </label>
+
+              <label>
+                <span>Comments</span>
+                <textarea name="comments" [(ngModel)]="newRisk.comments"></textarea>
+              </label>
+            </ng-container>
+
+            <ng-template #editTreatmentsTemplate>
+              <div class="edit-selector-card">
+                <label>
+                  <span>Treatment to edit</span>
+                  <input type="number" name="editTreatmentNumber" min="1" [max]="newRisk.treatments.length"
+                    [(ngModel)]="editTreatmentNumber" (ngModelChange)="clampSelectedTreatmentNumber()" />
+                </label>
+                <p>Available treatments: {{ newRisk.treatments.length }}. Only the selected treatment will be updated.
+                </p>
+              </div>
+
+              <ng-container *ngIf="getSelectedTreatment() as treatment; else noTreatmentSelected">
+                <div class="nested-form-card">
+                  <h5>Treatment {{ editTreatmentNumber }}</h5>
+
+                  <label>
+                    <span>Risk treatment option</span>
+                    <input type="text" name="selectedRiskTreatmentOption" [(ngModel)]="treatment.riskTreatmentOption" />
+                  </label>
+
+                  <label>
+                    <span>Treatment plan</span>
+                    <textarea name="selectedTreatmentPlan" [(ngModel)]="treatment.treatmentPlan"></textarea>
+                  </label>
+
+                  <label>
+                    <span>Owner</span>
+                    <input type="text" name="selectedOwner" [(ngModel)]="treatment.owner" />
+                  </label>
+
+                  <label>
+                    <span>Due date</span>
+                    <input type="text" name="selectedDueDate" [(ngModel)]="treatment.dueDate"
+                      placeholder="01-01-2001" />
+                  </label>
+
+                  <label>
+                    <span>Status</span>
+                    <select name="selectedStatus" [(ngModel)]="treatment.status">
+                      <option value="Open">Open</option>
+                      <option value="Closed">Closed</option>
+                      <option value="Not applicable">Not applicable</option>
+                    </select>
+                  </label>
+
+                  <label>
+                    <span>Residual risk</span>
+                    <input type="text" name="selectedResidualRisk" [(ngModel)]="treatment.residualRisk" />
+                  </label>
+
+                  <label>
+                    <span>Comments</span>
+                    <textarea name="selectedComments" [(ngModel)]="treatment.comments"></textarea>
+                  </label>
+                </div>
+              </ng-container>
+
+              <ng-template #noTreatmentSelected>
+                <div class="error-state inline-error-state">Select a valid treatment number.</div>
+              </ng-template>
+            </ng-template>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn-admin" (click)="closeRiskForm()">
+              Cancel
+            </button>
+            <button type="submit" class="btn-admin" [disabled]="submittingRisk">
+              {{ submittingRisk ? 'Saving...' : (isEditMode ? 'Update selected items' : 'Save risk') }}
+            </button>
+          </div>
+        </form>
+      </div>
+    </ng-template>
+
+    <div *ngIf="addRiskOpen && !isEditMode">
+      <ng-container [ngTemplateOutlet]="riskFormTemplate"></ng-container>
+    </div>
+
+    <div class="table-wrapper">
+      <table class="risk-summary-table">
+        <thead>
+          <tr>
+            <th>Risk ID</th>
+            <th>Description</th>
+            <th>Criticality</th>
+            <th>Treatment</th>
+            <th>Status</th>
+            <th>Owner</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let risk of riskRegister; trackBy: trackByRisk">
+            <tr [class.editing-risk-row]="isEditMode && editingRiskId === risk.riskId">
+              <td>{{ risk.riskId }}</td>
+              <td class="risk-description-cell">
+                <button type="button" class="risk-description-btn" (click)="selectRisk(risk)">
+                  {{ risk.description || risk.assetName || risk.riskId }}
+                </button>
+              </td>
+              <td>
+                <span class="risk-criticality" [ngClass]="getRiskLevelClass(risk.riskCategory)">
+                  {{ risk.riskCategory }}
+                </span>
+              </td>
+              <td>{{ risk.riskTreatmentOption }}</td>
+              <td>
+                <span class="risk-status" [ngClass]="getStatusClass(risk.status)">
+                  {{ risk.status }}
+                </span>
+              </td>
+              <td>{{ risk.owner }}</td>
+              <td class="risk-actions-cell">
+                <div class="row-action-group">
+                  <button type="button" class="btn-admin" (click)="openEditRisk(risk)"
+                    [disabled]="submittingRisk || deletingRisk">
+                    Edit
+                  </button>
+                  <button type="button" class="btn-admin" (click)="deleteRisk(risk)" [disabled]="deletingRisk">
+                    Delete
+                  </button>
+                </div>
+              </td>
+            </tr>
+
+            <tr *ngIf="addRiskOpen && isEditMode && editingRiskId === risk.riskId" class="risk-inline-form-row"
+              [attr.data-risk-form-for]="risk.riskId">
+              <td colspan="7">
+                <ng-container [ngTemplateOutlet]="riskFormTemplate"></ng-container>
+              </td>
+            </tr>
+
+            <tr *ngIf="selectedRisk?.riskId === risk.riskId" class="risk-inline-detail-row">
+              <td colspan="7">
+                <ng-container [ngTemplateOutlet]="riskDetailTemplate"
+                  [ngTemplateOutletContext]="{ risk: selectedRisk }">
+                </ng-container>
+              </td>
+            </tr>
+          </ng-container>
+
+          <tr *ngIf="riskRegister.length === 0">
+            <td colspan="7" class="empty-cell">No risks found.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ng-template #riskDetailTemplate let-risk="risk">
+      <div class="risk-detail-panel">
+        <div class="risk-detail-header">
+          <div>
+            <h3>{{ risk.riskId }} - {{ risk.description || risk.assetName }}</h3>
+            <p>Detailed view of the selected risk.</p>
+          </div>
+
+          <button type="button" class="btn-user" (click)="closeRiskDetail()">
+            Close
+          </button>
+        </div>
+
+        <section class="risk-detail-section">
+          <div class="risk-section-title risk-section-title-identification">
+            <span>RISK IDENTIFICATION</span>
+            <span class="risk-section-id">{{ risk.riskId }}</span>
+          </div>
+
+          <div class="risk-detail-grid">
+            <div class="risk-detail-row">
+              <div class="risk-detail-label">Category</div>
+              <div class="risk-detail-value">{{ risk.category }}</div>
+            </div>
+            <div class="risk-detail-row">
+              <div class="risk-detail-label">Sub category</div>
+              <div class="risk-detail-value">{{ risk.subCategory }}</div>
+            </div>
+            <div class="risk-detail-row">
+              <div class="risk-detail-label">Asset type</div>
+              <div class="risk-detail-value">{{ risk.assetType }}</div>
+            </div>
+            <div class="risk-detail-row">
+              <div class="risk-detail-label">Asset name</div>
+              <div class="risk-detail-value">{{ risk.assetName }}</div>
+            </div>
+            <div class="risk-detail-row">
+              <div class="risk-detail-label">Vulnerability</div>
+              <div class="risk-detail-value">{{ risk.vulnerability }}</div>
+            </div>
+            <div class="risk-detail-row">
+              <div class="risk-detail-label">Threats</div>
+              <div class="risk-detail-value">{{ risk.threats }}</div>
+            </div>
+            <div class="risk-detail-row">
+              <div class="risk-detail-label">Core value impacted</div>
+              <div class="risk-detail-value">{{ risk.coreValueImpacted }}</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="risk-detail-section">
+          <div class="risk-section-title risk-section-title-assessment">
+            <span>RISK ASSESSMENT</span>
+            <span class="risk-section-title-actions">
+              <button type="button" class="risk-section-add-btn" (click)="openAddAssessment(risk)">
+                + Assessment
+              </button>
+              <span class="risk-section-id">{{ risk.riskId }}</span>
+            </span>
+          </div>
+
+          <div class="risk-detail-table-wrapper">
+            <table class="risk-detail-table">
+              <thead>
+                <tr>
+                  <th>Assessment</th>
+                  <th>Risk impact description</th>
+                  <th>Existing controls</th>
+                  <th>Impact</th>
+                  <th>Likelihood</th>
+                  <th>Risk category</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <ng-container *ngIf="risk.assessments?.length; else singleAssessmentRow">
+                  <tr *ngFor="let assessment of risk.assessments; let i = index">
+                    <td>Assessment {{ i + 1 }}</td>
+                    <td>{{ assessment.riskImpactDescription }}</td>
+                    <td>{{ assessment.existingControls }}</td>
+                    <td>{{ assessment.impact }}</td>
+                    <td>{{ assessment.likelihood }}</td>
+                    <td>{{ assessment.riskCategory }}</td>
+                    <td>
+                      <button type="button" class="btn-admin"
+                        (click)="deleteAssessment(risk, assessment, i)" [disabled]="deletingRisk">
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                </ng-container>
+
+                <ng-template #singleAssessmentRow>
+                  <tr>
+                    <td>Assessment 1</td>
+                    <td>{{ risk.riskImpactDescription }}</td>
+                    <td>{{ risk.existingControls }}</td>
+                    <td>{{ risk.impact }}</td>
+                    <td>{{ risk.likelihood }}</td>
+                    <td>{{ risk.riskCategory }}</td>
+                    <td>
+                      <button type="button" class="btn-admin" (click)="deleteAssessment(risk)"
+                        [disabled]="deletingRisk">
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                </ng-template>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="risk-detail-section">
+          <div class="risk-section-title risk-section-title-treatment">
+            <span>RISK TREATMENT</span>
+            <span class="risk-section-title-actions">
+              <button type="button" class="risk-section-add-btn" (click)="openAddTreatment(risk)">
+                + Treatment
+              </button>
+              <span class="risk-section-id">{{ risk.riskId }}</span>
+            </span>
+          </div>
+
+          <div class="risk-detail-table-wrapper">
+            <table class="risk-detail-table">
+              <thead>
+                <tr>
+                  <th>Treatment</th>
+                  <th>Treatment option</th>
+                  <th>Treatment plan</th>
+                  <th>Owner</th>
+                  <th>Due date</th>
+                  <th>Status</th>
+                  <th>Residual risk</th>
+                  <th>Comments</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <ng-container *ngIf="risk.treatments?.length; else singleTreatmentRow">
+                  <tr *ngFor="let treatment of risk.treatments; let i = index">
+                    <td>Treatment {{ i + 1 }}</td>
+                    <td>{{ treatment.riskTreatmentOption }}</td>
+                    <td>{{ treatment.treatmentPlan }}</td>
+                    <td>{{ treatment.owner }}</td>
+                    <td>{{ treatment.dueDate }}</td>
+                    <td>
+                      <span class="risk-status" [ngClass]="getStatusClass(treatment.status)">
+                        {{ treatment.status }}
+                      </span>
+                    </td>
+                    <td>{{ treatment.residualRisk }}</td>
+                    <td>{{ treatment.comments }}</td>
+                    <td>
+                      <button type="button" class="btn-admin"
+                        (click)="deleteTreatment(risk, treatment, i)" [disabled]="deletingRisk">
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                </ng-container>
+
+                <ng-template #singleTreatmentRow>
+                  <tr>
+                    <td>Treatment 1</td>
+                    <td>{{ risk.riskTreatmentOption }}</td>
+                    <td>{{ risk.treatmentPlan }}</td>
+                    <td>{{ risk.owner }}</td>
+                    <td>{{ risk.dueDate }}</td>
+                    <td>
+                      <span class="risk-status" [ngClass]="getStatusClass(risk.status)">
+                        {{ risk.status }}
+                      </span>
+                    </td>
+                    <td>{{ risk.residualRisk }}</td>
+                    <td>{{ risk.comments }}</td>
+                    <td>
+                      <button type="button" class="delete-row-btn compact-delete-btn" (click)="deleteTreatment(risk)"
+                        [disabled]="deletingRisk">
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                </ng-template>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </ng-template>
+  </div>
+</div>

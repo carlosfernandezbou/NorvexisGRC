@@ -1,0 +1,81 @@
+/* =========================================================
+   RISK THREATS CATALOG - Modern NorvexisGRC redesign
+   Visual-only update. No functionality changed.
+   ========================================================= */
+
+:host {
+  display: block;
+  --primary: #0f3d75;
+  --primary-strong: #08264d;
+  --secondary: #12c6c0;
+  --accent: #22d3ee;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --line: rgba(15, 61, 117, 0.12);
+  --shadow: 0 18px 45px rgba(2, 6, 23, 0.08);
+}
+
+.catalog-panel {
+  margin-top: 4px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 22px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 760px;
+  overflow: hidden;
+  border-radius: 22px;
+}
+
+.styled-table thead th {
+  background: linear-gradient(135deg, var(--primary-strong), var(--primary), var(--secondary));
+  color: white;
+  text-align: left;
+  padding: 17px 18px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.styled-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.styled-table tbody tr:hover {
+  background: linear-gradient(90deg, rgba(34, 211, 238, 0.08), rgba(18, 198, 192, 0.04));
+}
+
+.styled-table td {
+  padding: 16px 18px;
+  vertical-align: top;
+  color: #243044;
+  font-size: 14px;
+  line-height: 1.6;
+  border-bottom: 1px solid rgba(15, 61, 117, 0.08);
+}
+
+.styled-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.styled-table td:first-child {
+  font-weight: 800;
+  color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .styled-table {
+    min-width: 680px;
+  }
+}

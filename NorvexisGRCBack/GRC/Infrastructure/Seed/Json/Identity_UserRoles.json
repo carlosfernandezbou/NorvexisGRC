@@ -1,0 +1,14 @@
+[
+    {
+        "UserId": "acd606a6-14fa-4b64-b6fa-e21ab45d24ea",
+        "RoleId": "2d222cf1-0c4f-4847-8062-691b9b802637",
+        "$type": "IdentityUserRole",
+        "id": "IdentityUserRole|2d222cf1-0c4f-4847-8062-691b9b802637"
+    },
+    {
+        "UserId": "c1628526-6891-4e29-90f3-decc5d667fdf",
+        "RoleId": "c65e5ff8-9b80-4099-88fc-54c7ce2528b2",
+        "$type": "IdentityUserRole",
+        "id": "IdentityUserRole|c65e5ff8-9b80-4099-88fc-54c7ce2528b2"
+    }
+]
