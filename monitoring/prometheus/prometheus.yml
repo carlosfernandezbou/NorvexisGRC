@@ -1,0 +1,9 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: "grc-api"
+    metrics_path: /metrics
+    static_configs:
+      # Nombre del servicio del backend en la red de docker-compose
+      - targets: ["backend:5000"]

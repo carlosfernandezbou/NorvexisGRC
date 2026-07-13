@@ -35,6 +35,7 @@ using GRC.Infrastructure.Data;
 using GRC.Infrastructure.Services;
 using GRC.Infrastructure.Jobs;
 using GRC.Infrastructure.Data.Seed;
+using GRC.Infrastructure.Cosmos;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -65,22 +66,36 @@ builder.Services.AddDbContext<GrcDbContext>(options =>
     options.UseCosmos(
         endpoint,
         key,
-        databaseName));
+        databaseName,
+        cosmos =>
+        {
+            if (CosmosTls.DisableTlsValidation(builder.Configuration))
+                CosmosTls.ConfigureEfCore(cosmos);
+        }));
 //
 
 //AUDIT TRAIL
 Audit.Core.Configuration.Setup()
-    .UseAzureCosmos(config => config
-        .Endpoint(endpoint)
-        .AuthKey(key)
-        .Database(databaseName)
-        .Container("AuditEvents")
-    );
+    .UseAzureCosmos(config =>
+    {
+        config
+            .Endpoint(endpoint)
+            .AuthKey(key)
+            .Database(databaseName)
+            .Container("AuditEvents");
+
+        if (CosmosTls.DisableTlsValidation(builder.Configuration))
+            config.ClientOptions(CosmosTls.ConfigureClientOptions);
+    });
 //
 
 // IDENTITY WITH COSMOS
 builder.Services.AddDbContext<IdentityCosmosDbContext>(options =>
-    options.UseCosmos(endpoint, key, databaseName));
+    options.UseCosmos(endpoint, key, databaseName, cosmos =>
+    {
+        if (CosmosTls.DisableTlsValidation(builder.Configuration))
+            CosmosTls.ConfigureEfCore(cosmos);
+    }));
 
 builder.Services
     .AddCosmosIdentity<IdentityCosmosDbContext, UserModel, IdentityRole, string>(options =>
@@ -178,17 +193,6 @@ builder.Services.AddQuartz(q =>
         .WithIdentity("MonthlyKpiJob-trigger")
          //.WithCronSchedule("0 */1 * * * ?")); // Ejecutar cada minuto para pruebas. Cambiar a "0 0 0 1 * ?"  para ejecutar el primer día de cada mes o "0 5 0 * * ?" cada dia
          .WithCronSchedule("0 5 0 * * ?"));
-
-
-    /*   var resetDbJobKey = new JobKey("ResetPortfolioDbJob");
-
-         q.AddJob<ResetPortfolioDbJob>(opts => opts.WithIdentity(resetDbJobKey));
-
-         q.AddTrigger(opts => opts
-             .ForJob(resetDbJobKey)
-             .WithIdentity("ResetPortfolioDbJob-trigger")
-             .WithCronSchedule("0 0/30 * * * ?")); // cada 30 minutos
-    */
 });
 
 builder.Services.AddQuartzHostedService(options =>
@@ -291,16 +295,41 @@ builder.Services.AddRateLimiter(options =>
 var app = builder.Build();
 
 //CREATE DB AND SEED
-try
 {
-    await CosmosInitializer.InitializeAsync(app.Services, endpoint, key, databaseName);
-    await UserSeeder.SeedAsync(app.Services);
-    await KpiConfSeeder.SeedAsync(app.Services);
-    await SoaSeeder.SeedAsync(app.Services);
-}
-catch (Exception ex)
-{
-    app.Logger.LogError(ex, "Cosmos DB no disponible durante el arranque");
+    var cosmosClientOptions = CosmosTls.DisableTlsValidation(builder.Configuration)
+        ? CosmosTls.CreateClientOptions()
+        : null;
+
+    const int maxSeedAttempts = 30;
+    var seedDelay = TimeSpan.FromSeconds(5);
+
+    for (var attempt = 1; attempt <= maxSeedAttempts; attempt++)
+    {
+        try
+        {
+            await CosmosInitializer.InitializeAsync(app.Services, endpoint, key, databaseName, cosmosClientOptions);
+            await UserSeeder.SeedAsync(app.Services);
+            await KpiConfSeeder.SeedAsync(app.Services);
+            await SoaSeeder.SeedAsync(app.Services);
+
+            app.Logger.LogInformation("Inicialización y seeding de Cosmos completados (intento {Attempt}).", attempt);
+            break;
+        }
+        catch (Exception ex)
+        {
+            if (attempt == maxSeedAttempts)
+            {
+                app.Logger.LogError(ex, "Cosmos DB no disponible tras {Attempts} intentos", attempt);
+                break;
+            }
+
+            app.Logger.LogWarning(
+                "Cosmos aún no está listo (intento {Attempt}/{Max}): {Message}. Reintentando en {Delay}s.",
+                attempt, maxSeedAttempts, ex.Message, seedDelay.TotalSeconds);
+
+            await Task.Delay(seedDelay);
+        }
+    }
 }
 //
 

@@ -4,7 +4,7 @@ using Microsoft.Azure.Cosmos;
 
 public static class CosmosInitializer
 {
-    public static async Task InitializeAsync(IServiceProvider services, string endpoint, string key, string databaseName)
+    public static async Task InitializeAsync(IServiceProvider services, string endpoint, string key, string databaseName, CosmosClientOptions? clientOptions = null)
     {
         using var scope = services.CreateScope();
 
@@ -14,7 +14,9 @@ public static class CosmosInitializer
         var identityContext = scope.ServiceProvider.GetRequiredService<IdentityCosmosDbContext>();
         await identityContext.Database.EnsureCreatedAsync();
 
-        var cosmosClient = new CosmosClient(endpoint, key);
+        var cosmosClient = clientOptions is null
+            ? new CosmosClient(endpoint, key)
+            : new CosmosClient(endpoint, key, clientOptions);
 
         var properties = new ContainerProperties(
         id: "AuditEvents",

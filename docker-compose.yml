@@ -1,0 +1,100 @@
+services:
+  # -------------------- Base de datos: emulador de Azure Cosmos DB --------------------
+  cosmos:
+    image: mcr.microsoft.com/cosmosdb/linux/azure-cosmos-emulator:vnext-preview
+    container_name: norvexis-cosmos
+    environment:
+      # El SDK .NET no soporta HTTP en el emulador -> HTTPS. El cert es autofirmado y CosmosTls lo acepta.
+      PROTOCOL: "https"
+    ports:
+      - "8081:8081"
+      - "1234:1234"
+      - "8080:8080"
+    volumes:
+      - cosmos-data:/data
+    networks:
+      - norvexis
+    restart: unless-stopped
+
+  # -------------------- Backend: API ASP.NET Core (.NET 9) --------------------
+  backend:
+    build:
+      context: ./NorvexisGRCBack/GRC
+      dockerfile: Dockerfile
+    container_name: norvexis-backend
+    environment:
+      ASPNETCORE_URLS: "http://+:5000"
+      ASPNETCORE_ENVIRONMENT: "Development"
+      Source: "docker-compose"
+      CosmosDb__AccountEndpoint: "https://cosmos:8081/"
+      CosmosDb__AccountKey: "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw=="
+      CosmosDb__DatabaseName: "NorvexisGRC"
+      CosmosDb__DisableTlsValidation: "true"
+      Jwt__Key: "ESTA_ES_UNA_CLAVE_SUPER_LARGA_PARA_DESARROLLO_123456789"
+      Jwt__Issuer: "NorvexisGRC"
+      Jwt__Audience: "NorvexisGRCUsers"
+      Jwt__ExpiresMinutes: "60"
+    ports:
+      - "5000:5000"
+    depends_on:
+      - cosmos
+    networks:
+      - norvexis
+    restart: unless-stopped
+
+  # -------------------- Frontend: Angular servido por nginx --------------------
+  frontend:
+    build:
+      context: ./NorvexisGRCFront
+      dockerfile: Dockerfile
+    container_name: norvexis-frontend
+    ports:
+      - "4200:80"          # 4200 en el host para coincidir con la politica CORS del backend
+    depends_on:
+      - backend
+    networks:
+      - norvexis
+    restart: unless-stopped
+
+  # -------------------- Monitorizacion: Prometheus --------------------
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: norvexis-prometheus
+    volumes:
+      - ./monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus-data:/prometheus
+    ports:
+      - "9090:9090"
+    depends_on:
+      - backend
+    networks:
+      - norvexis
+    restart: unless-stopped
+
+  # -------------------- Dashboards: Grafana --------------------
+  grafana:
+    image: grafana/grafana:latest
+    container_name: norvexis-grafana
+    environment:
+      GF_SECURITY_ADMIN_USER: "admin"
+      GF_SECURITY_ADMIN_PASSWORD: "admin"
+      GF_USERS_ALLOW_SIGN_UP: "false"
+    volumes:
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning:ro
+      - grafana-data:/var/lib/grafana
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus
+    networks:
+      - norvexis
+    restart: unless-stopped
+
+volumes:
+  cosmos-data:
+  prometheus-data:
+  grafana-data:
+
+networks:
+  norvexis:
+    driver: bridge

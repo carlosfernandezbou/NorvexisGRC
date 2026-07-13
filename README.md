@@ -119,6 +119,60 @@ ng serve
 
 ---
 
+## Ejecución con Docker (stack completo)
+
+El proyecto incluye un `docker-compose.yml` que levanta **todo el stack** en contenedores:
+frontend (Angular + nginx), backend (ASP.NET Core), base de datos (emulador de Azure Cosmos DB),
+Prometheus y Grafana.
+
+### Prerrequisitos
+
+- Docker Desktop (con contenedores Linux)
+
+Se usa el emulador **vNext** de Cosmos, ligero y de arranque rápido (segundos).
+
+### Arranque
+
+```bash
+docker compose up --build
+```
+
+El backend **espera automáticamente** al health probe del emulador (`/ready`) antes de arrancar y
+sembrar la base de datos, y reintenta el seeding hasta que Cosmos acepta operaciones.
+
+### Servicios y URLs
+
+| Servicio | URL | Notas |
+|---|---|---|
+| Frontend | http://localhost:4200 | Angular servido por nginx |
+| API / Swagger | http://localhost:5000/swagger | |
+| Health config | http://localhost:5000/health/config | debe mostrar `isUsingDockerComposeEnvironment: true` |
+| Cosmos Data Explorer | https://localhost:1234/ | emulador vNext; certificado autofirmado |
+| Prometheus | http://localhost:9090 | Status → Targets → `grc-api` en **UP** |
+| Grafana | http://localhost:3000 | admin / admin — datasource Prometheus ya provisionado |
+
+### Detalles de configuración
+
+- La conexión a Cosmos se inyecta por variables de entorno (`CosmosDb__*`), que sobrescriben
+  `appsettings.json`.
+- `CosmosDb__DisableTlsValidation=true` hace que el backend acepte el certificado autofirmado del
+  emulador (modo Gateway). **Este flag es solo para desarrollo/Docker; nunca usarlo contra un Cosmos
+  real de Azure.**
+- Los datos de Cosmos y los dashboards de Grafana persisten en volúmenes nombrados
+  (`cosmos-data`, `prometheus-data`, `grafana-data`), por lo que sobreviven a `docker compose down`.
+  Para empezar de cero: `docker compose down -v`.
+- El frontend llama a la API en `http://localhost:5000/api` (puerto publicado en el host), por lo que
+  no requiere cambios para el uso local.
+
+### Parar el stack
+
+```bash
+docker compose down        # conserva los datos
+docker compose down -v     # elimina también los volúmenes
+```
+
+---
+
 ## URLs Locales
 
 | Servicio | URL |
@@ -282,27 +336,6 @@ El job `MonthlyKpiJob` genera automáticamente KPIs periódicos utilizando las p
 2. Se llama a `GenerateKpisAsync()`
 3. Se generan KPIs automáticamente
 4. Se registran métricas de éxito/fallo
-
-### ResetPortfolioDbJob
-El job ResetPortfolioDbJob reinicializa automáticamente la base de datos de Azure CosmosDB y vuelve a cargar los datos iniciales de la aplicación.
-
-### Funcionalidades
-
-- Eliminación automática de la base de datos
-- Recreación automática de CosmosDB
-- Ejecución automática de seeders
-- Inicialización de usuarios y datos base
-- Logging de errores
-- Ejecución programada mediante cron
-- Ejecución desacoplada del frontend
-
-### Flujo de ejecución
-
-1. Quartz ejecuta el job
-2. Se elimina la base de datos actual
-3. Se recrea la base de datos mediante CosmosInitializer
-4. Se ejecutan los seeders
-5. Se registran logs de éxito/fallo
 
 ### Métricas disponibles
 
